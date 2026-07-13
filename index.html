@@ -118,13 +118,10 @@
     <!-- Hero Content -->
     <div class="hero-content scroll-reveal">
       <!-- Live Status Badge -->
-      <div class="live-status">
+      <a class="live-status" onclick="openModal('contactModal')" style="cursor:pointer; user-select:none;" title="Send Message">
         <span class="live-dot"></span>
         <span data-lk="liveStatus">Open to Collaboration</span>
-      </div>
-      <button class="btn btn-primary hero-msg-btn" onclick="openModal('contactModal')">
-        <i class="fa-solid fa-paper-plane"></i> <span data-lk="heroSendMsg">Send Message</span>
-      </button>
+      </a>
 
       <p class="hero-eyebrow"><span id="heroEyebrowTyped"></span><span class="cursor blink-cursor">_</span></p>
 
