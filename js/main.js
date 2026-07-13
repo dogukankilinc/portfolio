@@ -294,6 +294,7 @@ const T = {
     navAbout:'About', navExperience:'Experience', navEducation:'Education',
     navProjects:'Projects', navSkills:'Skills', navCerts:'Certifications', navContact:'Contact',
     heroEyebrow:'> Hello, World! I am',
+    heroSendMsg: 'Send Message',
     heroSub:'AI & ML Engineer at FİGES A.Ş. · MSc EEE · Computer Vision · Deep Learning · Edge AI',
     heroBtnProjects:'View Projects', heroBtnCV:'Download CV', heroBtnAcademic:'Academic CV',
     liveStatus:'Open to Collaboration',
@@ -780,3 +781,14 @@ window._relangPublications = function(l) {
   
   animate();
 })();
+
+
+// Modal Functions
+window.openModal = function(id) {
+  document.getElementById(id).classList.add('active');
+};
+window.closeModal = function(e, id) {
+  if(e.target.id === id) {
+    document.getElementById(id).classList.remove('active');
+  }
+};

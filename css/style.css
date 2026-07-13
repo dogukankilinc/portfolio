@@ -994,3 +994,61 @@ a, button, .lang-btn, .cert-filter-btn, summary, .hamburger {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 255, 136, 0.1);
 }
+
+
+/* ===================== MODAL ===================== */
+.hero-msg-btn {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: inline-flex;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+.modal-close {
+  position: absolute;
+  top: 15px; right: 15px;
+  background: none; border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.modal-close:hover {
+  color: var(--accent);
+}
+#contactModalForm .form-group {
+  margin-bottom: 15px;
+}

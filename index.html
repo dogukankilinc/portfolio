@@ -118,10 +118,13 @@
     <!-- Hero Content -->
     <div class="hero-content scroll-reveal">
       <!-- Live Status Badge -->
-      <a href="#contact" class="live-status" style="text-decoration:none; color:inherit; cursor:pointer;" title="Contact Me">
+      <div class="live-status">
         <span class="live-dot"></span>
         <span data-lk="liveStatus">Open to Collaboration</span>
-      </a>
+      </div>
+      <button class="btn btn-primary hero-msg-btn" onclick="openModal('contactModal')">
+        <i class="fa-solid fa-paper-plane"></i> <span data-lk="heroSendMsg">Send Message</span>
+      </button>
 
       <p class="hero-eyebrow"><span id="heroEyebrowTyped"></span><span class="cursor blink-cursor">_</span></p>
 
@@ -966,5 +969,32 @@
 
 
 <script src="js/main.js?v=2.4"></script>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal-overlay" onclick="closeModal(event, 'contactModal')">
+  <div class="modal-content">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
+    <h3 data-lk="modalTitle" style="margin-bottom:20px;">Send a Message</h3>
+    <form id="contactModalForm" action="#" onsubmit="return false;">
+      <div class="form-group">
+        <label for="m-name" data-lk="formNameLabel">Your Name</label>
+        <input type="text" id="m-name" name="name" placeholder="Jane Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="m-email" data-lk="formEmailLabel">Your Email</label>
+        <input type="email" id="m-email" name="email" placeholder="jane@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="m-message" data-lk="formMsgLabel">Your Message</label>
+        <textarea id="m-message" name="message" placeholder="Hello Doğukan..." rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span data-lk="formBtn">Send Message</span>
+      </button>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
