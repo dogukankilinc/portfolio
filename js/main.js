@@ -540,9 +540,7 @@ document.getElementById('mobileLangEN')?.addEventListener('click', () => setLang
 document.getElementById('mobileLangTR')?.addEventListener('click', () => setLang('tr'));
 
 // Apply saved language on load
-if (lang !== 'en') {
-  try { applyLang(lang); } catch(e) { console.error('[Lang Init Error]', e); }
-}
+try { applyLang(lang); } catch(e) { console.error('[Lang Init Error]', e); }
 
 // ==================== CERTIFICATIONS FILTER ====================
 document.querySelectorAll('.cert-filter-btn').forEach(btn => {
