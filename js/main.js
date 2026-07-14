@@ -486,7 +486,7 @@ function applyLang(l) {
     const tag = el.tagName;
 
     if (tag === 'INPUT' || tag === 'TEXTAREA') { el.placeholder = val; return; }
-    if (el.dataset.lkHtml !== undefined) { el.innerHTML = val; return; }
+    if (el.hasAttribute('data-lk-html')) { el.innerHTML = val; return; }
 
     // Labels: update first text node
     if (tag === 'LABEL') {
