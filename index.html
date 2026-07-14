@@ -1003,9 +1003,19 @@
   </div>
 </div>
 
-<!-- Chatbase AI Widget -->
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="Rphvk1h_sxNKtORKYYcnU";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+<!-- Custom AI Chat Drawer -->
+<div id="ai-chat-drawer" class="ai-drawer">
+  <div class="ai-drawer-toggle" id="aiDrawerToggle" onclick="toggleAIDrawer()">
+    <i class="fa-solid fa-robot"></i> <span data-lk="askAI">Ask AI</span>
+  </div>
+  <div class="ai-drawer-content">
+    <iframe
+      src="https://www.chatbase.co/chatbot-iframe/Rphvk1h_sxNKtORKYYcnU"
+      width="100%"
+      height="100%"
+      frameborder="0"
+    ></iframe>
+  </div>
+</div>
 </body>
 </html>
