@@ -17,6 +17,8 @@ window.addEventListener('load', () => {
 
 
 // ==================== SECTION THEME OBSERVER ====================
+const sectionThemes = {};
+let target = {};
 const allSections = document.querySelectorAll('section[id]');
 const themeObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
