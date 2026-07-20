@@ -1128,7 +1128,16 @@ a, button, .lang-btn, .cert-filter-btn, summary, .hamburger {
 /* Responsive adjustments for AI drawer */
 @media (max-width: 768px) {
   .ai-drawer {
-    width: 90vw;
-    right: -90vw;
+    width: calc(100vw - 46px);
+    right: calc(-100vw + 46px);
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    top: 0;
+    transform: none;
+    border-radius: 0;
+  }
+  .ai-drawer-content {
+    border-radius: 0;
   }
 }
