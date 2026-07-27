@@ -294,7 +294,11 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 const T = {
   en: {
     navAbout:'About', navExperience:'Experience', navEducation:'Education',
-    navProjects:'Projects', navSkills:'Skills', navCerts:'Certifications', navContact:'Contact',
+    navProjects:'Projects', navPubs:'Publications', navNotes:'Notes', navSkills:'Skills', navCerts:'Certifications', navContact:'Contact',
+    notesTag:'RESOURCES & STUDY MATERIAL', notesTitle:'Notes',
+    note1Title:'Deep Learning Foundations', note1Desc:'Comprehensive notes covering neural networks, backpropagation, and CNN architectures.',
+    note2Title:'Computer Vision Basics', note2Desc:'Key concepts in image processing, filtering, and feature extraction techniques.',
+    downloadBtn:'Download PDF',
     heroEyebrow:'> Hello, World! I am',
     heroSendMsg: 'Send Message',
     modalTitle: 'Send a Message',
@@ -383,7 +387,11 @@ const T = {
   },
   tr: {
     navAbout:'Hakkımda', navExperience:'Deneyim', navEducation:'Eğitim',
-    navProjects:'Projeler', navSkills:'Yetenekler', navCerts:'Sertifikalar', navContact:'İletişim',
+    navProjects:'Projeler', navPubs:'Yayınlar', navNotes:'Notlar', navSkills:'Yetenekler', navCerts:'Sertifikalar', navContact:'İletişim',
+    notesTag:'KAYNAKLAR & DERS NOTLARI', notesTitle:'Notlar',
+    note1Title:'Derin Öğrenme Temelleri', note1Desc:'Yapay sinir ağları, geriyayılım (backpropagation) ve CNN mimarilerini kapsayan kapsamlı notlar.',
+    note2Title:'Bilgisayarlı Görüye Giriş', note2Desc:'Görüntü işleme, filtreleme ve özellik çıkarma (feature extraction) tekniklerine dair temel kavramlar.',
+    downloadBtn:'PDF İndir',
     heroEyebrow:'> Merhaba! Ben',
     heroSendMsg: 'Mesaj Gönder',
     modalTitle: 'Mesaj Gönder',
