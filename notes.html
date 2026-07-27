@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Doğukan M. KILINÇ — AI & ML Engineer specializing in Computer Vision, Deep Learning and Edge AI. Portfolio, projects, certifications and contact.">
+  <meta property="og:title" content="Doğukan M. KILINÇ | AI & ML Engineer">
+  <meta property="og:description" content="AI & ML Engineer at FİGES · Computer Vision · Deep Learning · Edge AI · MATLAB & Simulink">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/180156605?v=4">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Doğukan M. KILINÇ | AI &amp; ML Engineer</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QP13HHLJX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6QP13HHLJX');
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23080808'/><text x='50' y='68' font-family='monospace' font-size='52' font-weight='bold' text-anchor='middle' fill='%2300ff88'>D</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=2.8">
+
+  <style>
+    .nav-links a.active-nav { color: var(--accent); }
+    .nav-links a.active-nav::after { width: 100%; }
+    /* Section titles terminal cursor blink */
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+  </style>
+</head>
+<body>
+<!-- ===================== BACKGROUND ===================== -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html#home" class="nav-logo"><img src="assets/img/logo.png" alt="DMK Logo" style="height: 32px;"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"          data-lk="navAbout">About</a></li>
+      <li><a href="index.html#experience"     data-lk="navExperience">Experience</a></li>
+      <li><a href="index.html#education"      data-lk="navEducation">Education</a></li>
+      <li><a href="index.html#projects"       data-lk="navProjects">Projects</a></li>
+      <li><a href="index.html#publications"   data-lk="navPubs">Publications</a></li>
+      <li><a href="notes.html"                data-lk="navNotes">Notes</a></li>
+      <li><a href="index.html#skills"         data-lk="navSkills">Skills</a></li>
+      <li><a href="index.html#certifications" data-lk="navCerts">Certifications</a></li>
+      <li><a href="index.html#contact"        data-lk="navContact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+
+      <div class="lang-toggle" aria-label="Select language">
+        <span id="langEN" class="lang-btn lang-active">EN</span>
+        <span class="lang-sep">|</span>
+        <span id="langTR" class="lang-btn">TR</span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#about"        data-lk="navAbout">About</a></li>
+    <li><a href="index.html#skills"       data-lk="navSkills">Skills</a></li>
+    <li><a href="index.html#experience"   data-lk="navExperience">Experience</a></li>
+    <li><a href="index.html#projects"     data-lk="navProjects">Projects</a></li>
+    <li><a href="index.html#publications" data-lk="navPubs">Publications</a></li>
+    <li><a href="notes.html"              data-lk="navNotes">Notes</a></li>
+    <li><a href="index.html#certifications" data-lk="navCerts">Certifications</a></li>
+    <li><a href="index.html#contact"      data-lk="navContact">Contact</a></li>
+  </ul>
+  <div class="mobile-lang">
+    <div class="lang-toggle" style="width:100%;justify-content:center;">
+      <span id="mobileLangEN" class="lang-btn lang-active">EN</span>
+      <span class="lang-sep">|</span>
+      <span id="mobileLangTR" class="lang-btn">TR</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================== HERO ===================== -->
+<section id="home">
+  <div class="hero-grid">
+
+    <!-- Profile Photo -->
+    <div class="hero-photo-wrap scroll-reveal">
+      <div class="hero-photo-inner">
+        <div class="hero-ring"></div>
+        <div class="hero-ring-2"></div>
+        <img
+          src="https://avatars.githubusercontent.com/u/180156605?v=4"
+          alt="Doğukan M. KILINÇ"
+          loading="eager"
+        >
+        <!-- Glassmorphism hover overlay -->
+        <div class="photo-overlay">
+          <div class="photo-overlay-inner">
+            <div class="photo-overlay-name">Doğukan M. KILINÇ</div>
+            <div class="photo-overlay-title">AI &amp; ML Engineer</div>
+            <div class="photo-overlay-org">R&amp;D @ FİGES A.Ş.</div>
+            <div class="photo-overlay-tags">
+              <span>Computer Vision</span>
+              <span>Deep Learning</span>
+              <span>Edge AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content scroll-reveal">
+      <!-- Live Status Badge -->
+      <a class="live-status" onclick="openModal('contactModal')" style="cursor:pointer; user-select:none;" title="Send Message">
+        <span class="live-dot"></span>
+        <span data-lk="liveStatus">Open to Collaboration</span>
+      </a>
+
+      <p class="hero-eyebrow"><span id="heroEyebrowTyped"></span><span class="cursor blink-cursor">_</span></p>
+
+      
+      <h1 class="hero-name" data-lk="notesHeroTitle">My Personal Notes</h1>
+      <p class="hero-sub" data-lk="notesHeroSub" style="margin-top: 20px;">
+        A curated collection of my study materials, cheat sheets, and technical notes on AI, Deep Learning, and Computer Vision.
+      </p>
+
+
+      <div class="hero-pills">
+        <span class="hero-pill"><i class="fa-solid fa-image"></i> <span data-lk="heroPill1">Image Processing</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-eye"></i> <span data-lk="heroPill2">Computer Vision</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-brain"></i> <span data-lk="heroPill3">Machine Learning</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-network-wired"></i> <span data-lk="heroPill4">Deep Learning</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-microchip"></i> <span data-lk="heroPill5">Edge AI</span></span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="index.html#projects" class="btn btn-primary">
+          <i class="fa-solid fa-code"></i>
+          <span data-lk="heroBtnProjects">View Projects</span>
+        </a>
+        <a href="assets/cv/DMK-CV.pdf" download class="btn btn-outline" id="cvDownloadBtn">
+          <i class="fa-solid fa-download"></i>
+          <span data-lk="heroBtnCV">Download CV</span>
+        </a>
+        <a href="assets/cv/dmk-cv-academia.pdf" download class="btn btn-ghost">
+          <i class="fa-solid fa-scroll"></i>
+          <span data-lk="heroBtnAcademic">Academic CV</span>
+        </a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/dgkilinc/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/dogukankilinc" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:dmkilinc@outlook.com" class="social-icon" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+
+      <!-- Skill Category Marquee Strip -->
+      <div class="skill-marquee-wrap">
+        <div class="skill-marquee-track">
+          <!-- Duplicated for seamless loop -->
+          <span class="skill-cat-badge"><i class="fa-solid fa-square-root-variable"></i> MATLAB &amp; Simulink</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-brain"></i> Artificial Intelligence</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-sitemap"></i> Model-Based Design</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+          <span class="skill-cat-badge"><i class="fa-brands fa-python"></i> Python &amp; Data Analysis</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-microchip"></i> Edge AI &amp; Hardware</span>
+          <!-- Duplicate for seamless -->
+          <span class="skill-cat-badge"><i class="fa-solid fa-square-root-variable"></i> MATLAB &amp; Simulink</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-brain"></i> Artificial Intelligence</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-sitemap"></i> Model-Based Design</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+          <span class="skill-cat-badge"><i class="fa-brands fa-python"></i> Python &amp; Data Analysis</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-microchip"></i> Edge AI &amp; Hardware</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== NOTES / RESOURCES ===================== -->
+<section id="notes" class="section">
+  <div class="container">
+    <!-- Machine Learning -->
+    <div class="section-header scroll-reveal">
+      <h2 class="section-title">Machine Learning</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="notes-grid" style="margin-bottom: 60px;">
+      <div class="note-card scroll-reveal">
+        <div class="note-icon"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="note-content">
+          <h3>ML Algorithms Cheat Sheet</h3>
+          <p class="note-desc">Quick reference for classification, regression, and clustering algorithms.</p>
+          <a href="#" target="_blank" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Learning -->
+    <div class="section-header scroll-reveal">
+      <h2 class="section-title">Deep Learning</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="notes-grid" style="margin-bottom: 60px;">
+      <div class="note-card scroll-reveal">
+        <div class="note-icon"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="note-content">
+          <h3>Neural Networks & Backprop</h3>
+          <p class="note-desc">Detailed notes on forward passes, backpropagation calculus, and optimization.</p>
+          <a href="assets/notes/Deep_Learning_Notes.pdf" target="_blank" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Computer Vision -->
+    <div class="section-header scroll-reveal">
+      <h2 class="section-title">Computer Vision</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="notes-grid">
+      <div class="note-card scroll-reveal">
+        <div class="note-icon"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="note-content">
+          <h3>OpenCV & Image Processing</h3>
+          <p class="note-desc">Core concepts of filtering, edge detection, and morphological operations.</p>
+          <a href="assets/notes/Computer_Vision_Notes.pdf" target="_blank" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="contactTag">GET IN TOUCH</p>
+      <h2 class="section-title" data-lk="contactTitle">Let's Connect</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-wrap scroll-reveal">
+        <form id="contactForm" action="#" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-lk="formNameLabel">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Doe" data-lk="formNamePh" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-lk="formEmailLabel">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" data-lk="formEmailPh" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" data-lk="formMsgLabel">Your Message</label>
+            <textarea id="message" name="message" placeholder="Hello Doğukan, I would like to..." data-lk="formMsgPh" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-lk="formBtn">Send Message</span>
+          </button>
+          <div id="formSuccess"></div>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="contact-info scroll-reveal sr-d2">
+        <h3 class="contact-info-title" data-lk="contactInfoTitle">Contact Information</h3>
+        <p class="contact-info-desc" data-lk="contactDesc">Whether you have a project idea, a collaboration opportunity, or just want to say hello — my inbox is always open.</p>
+        <div class="contact-links">
+          <a href="mailto:dmkilinc@outlook.com" class="contact-link">
+            <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-link-body">
+              <h4 data-lk="contactLinkEmail">Email</h4>
+              <p data-lk="contactLinkEmailSub">dmkilinc@outlook.com</p>
+            </div>
+            <button class="copy-email-btn" data-copy-email title="Copy email">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </a>
+          <a href="https://www.linkedin.com/in/dgkilinc/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="contact-link-body">
+              <h4 data-lk="contactLinkLI">LinkedIn</h4>
+              <p data-lk="contactLinkLISub">linkedin.com/in/dgkilinc</p>
+            </div>
+          </a>
+          <a href="https://github.com/dogukankilinc" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="contact-link-body">
+              <h4 data-lk="contactLinkGH">GitHub</h4>
+              <p data-lk="contactLinkGHSub">github.com/dogukankilinc</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-text" data-lk="footerMade">Designed &amp; built with</span>
+
+      <span class="footer-name" data-lk="footerBy">by Doğukan M. KILINÇ</span>
+      <span class="footer-text">· 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-to-top button -->
+<button id="scrollTop" aria-label="Scroll to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+
+<script src="js/main.js?v=2.6"></script>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal-overlay" onclick="closeModal(event, 'contactModal')">
+  <div class="modal-content">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
+    <h3 data-lk="modalTitle" style="margin-bottom:20px;">Send a Message</h3>
+    <form id="contactModalForm" action="#" onsubmit="return false;">
+      <div class="form-group">
+        <label for="m-name" data-lk="formNameLabel">Your Name</label>
+        <input type="text" id="m-name" name="name" placeholder="Jane Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="m-email" data-lk="formEmailLabel">Your Email</label>
+        <input type="email" id="m-email" name="email" placeholder="jane@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="m-message" data-lk="formMsgLabel">Your Message</label>
+        <textarea id="m-message" name="message" placeholder="Hello Doğukan..." rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span data-lk="formBtn">Send Message</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Custom AI Chat Drawer -->
+<div id="ai-chat-drawer" class="ai-drawer">
+  <div class="ai-drawer-toggle" id="aiDrawerToggle" onclick="toggleAIDrawer()">
+    <i class="fa-solid fa-robot"></i> <span data-lk="askAI">Ask AI</span>
+  </div>
+  <div class="ai-drawer-content">
+    <iframe
+      src="https://www.chatbase.co/chatbot-iframe/Rphvk1h_sxNKtORKYYcnU"
+      width="100%"
+      height="100%"
+      frameborder="0"
+    ></iframe>
+  </div>
+</div>
+</body>
+</html>
