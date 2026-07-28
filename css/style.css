@@ -1388,9 +1388,10 @@ a, button, .lang-btn, .cert-filter-btn, summary, .hamburger {
   right: 0;
   width: 400px;
   height: 100vh;
-  background: var(--surface);
+  background: rgba(8, 8, 8, 0.98);
+  backdrop-filter: blur(12px);
   border-left: 1px solid var(--border);
-  box-shadow: -5px 0 30px rgba(0,255,136,0.1);
+  box-shadow: -5px 0 30px rgba(0,0,0,0.8);
   z-index: 10000;
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
