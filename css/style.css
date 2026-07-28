@@ -1402,6 +1402,41 @@ a, button, .lang-btn, .cert-filter-btn, summary, .hamburger {
   transform: translateX(0);
 }
 
+.notes-drawer-toggle {
+  position: absolute;
+  left: -42px;
+  top: 30%;
+  transform: translateY(-50%);
+  background: var(--accent);
+  color: #000;
+  padding: 15px 12px;
+  border-radius: 12px 0 0 12px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.notes-drawer-toggle:hover {
+  background: #0df06a;
+  box-shadow: -4px 0 15px rgba(13, 240, 106, 0.4);
+  padding-left: 18px;
+  left: -48px;
+}
+
+.notes-drawer-toggle i {
+  transform: rotate(90deg);
+  font-size: 1.1rem;
+}
+
 .notes-drawer-header {
   display: flex;
   justify-content: space-between;
