@@ -56,7 +56,7 @@
       <li><a href="#education"      data-lk="navEducation">Education</a></li>
       <li><a href="#projects"       data-lk="navProjects">Projects</a></li>
       <li><a href="#publications"   data-lk="navPubs">Publications</a></li>
-      <li><a href="notes.html"      data-lk="navNotes">Notes</a></li>
+      <li><a href="#"               onclick="toggleNotesDrawer(event)" data-lk="navNotes">Notes</a></li>
       <li><a href="#skills"         data-lk="navSkills">Skills</a></li>
       <li><a href="#certifications" data-lk="navCerts">Certifications</a></li>
       <li><a href="#contact"        data-lk="navContact">Contact</a></li>
@@ -83,7 +83,7 @@
     <li><a href="#experience"   data-lk="navExperience">Experience</a></li>
     <li><a href="#projects"     data-lk="navProjects">Projects</a></li>
     <li><a href="#publications" data-lk="navPubs">Publications</a></li>
-    <li><a href="notes.html"    data-lk="navNotes">Notes</a></li>
+    <li><a href="#"             onclick="toggleMenu(); toggleNotesDrawer(event)" data-lk="navNotes">Notes</a></li>
     <li><a href="#certifications" data-lk="navCerts">Certifications</a></li>
     <li><a href="#contact"      data-lk="navContact">Contact</a></li>
   </ul>
@@ -1001,6 +1001,44 @@
         <span data-lk="formBtn">Send Message</span>
       </button>
     </form>
+  </div>
+</div>
+
+<!-- Notes Drawer -->
+<div id="notes-drawer" class="notes-drawer">
+  <div class="notes-drawer-header">
+    <h3 data-lk="notesDrawerTitle">My Personal Notes</h3>
+    <button class="notes-drawer-close" onclick="closeNotesDrawer()" aria-label="Close notes">&times;</button>
+  </div>
+  <div class="notes-drawer-content">
+    
+    <div class="notes-category">
+      <h4 data-lk="catDL">Deep Learning</h4>
+      <div class="notes-list">
+        <a href="assets/notes/Deep Learning Onramp - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Deep Learning Onramp - MW</a>
+        <a href="assets/notes/Deep Learning with MATLAB - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Deep Learning with MATLAB - MW</a>
+        <a href="assets/notes/Derin Öğrenme - AÜ - Doç. Dr. Ferhat BOZKURT.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Derin Öğrenme - AÜ - Doç. Dr. Ferhat BOZKURT</a>
+        <a href="assets/notes/Derin Öğrenme - Teorik.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Derin Öğrenme - Teorik</a>
+        <a href="assets/notes/Hiperparametre Optimizasyonu - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Hiperparametre Optimizasyonu - MW</a>
+        <a href="assets/notes/Training Process - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Training Process - MW</a>
+      </div>
+    </div>
+
+    <div class="notes-category">
+      <h4 data-lk="catIP">Image Processing</h4>
+      <div class="notes-list">
+        <a href="assets/notes/MATLAB ile Temel Görüntü İşleme.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> MATLAB ile Temel Görüntü İşleme</a>
+      </div>
+    </div>
+
+    <div class="notes-category">
+      <h4 data-lk="catML">Machine Learning</h4>
+      <div class="notes-list">
+        <a href="assets/notes/Machine Learning with MATLAB.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Machine Learning with MATLAB</a>
+        <a href="assets/notes/Python Machine Learning - Miuul.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Python Machine Learning - Miuul</a>
+      </div>
+    </div>
+
   </div>
 </div>
 

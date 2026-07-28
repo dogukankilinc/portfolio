@@ -300,6 +300,10 @@ const T = {
     note2Title:'Computer Vision Basics', note2Desc:'Key concepts in image processing, filtering, and feature extraction techniques.',
     downloadBtn:'Download PDF',
     notesHeroTitle:'My Personal Notes', notesHeroSub:'A curated collection of my study materials, cheat sheets, and technical notes on AI, Deep Learning, and Computer Vision.',
+    notesDrawerTitle:'My Personal Notes',
+    catDL:'Deep Learning',
+    catIP:'Image Processing',
+    catML:'Machine Learning',
     heroEyebrow:'> Hello, World! I am',
     heroSendMsg: 'Send Message',
     modalTitle: 'Send a Message',
@@ -394,6 +398,10 @@ const T = {
     note2Title:'Bilgisayarlı Görüye Giriş', note2Desc:'Görüntü işleme, filtreleme ve özellik çıkarma (feature extraction) tekniklerine dair temel kavramlar.',
     downloadBtn:'PDF İndir',
     notesHeroTitle:'Kişisel Notlarım', notesHeroSub:'Yapay Zeka, Derin Öğrenme ve Bilgisayarlı Görü üzerine derlediğim çalışma materyalleri, kopya kağıtları ve teknik notlar koleksiyonu.',
+    notesDrawerTitle:'Kişisel Notlarım',
+    catDL:'Derin Öğrenme',
+    catIP:'Görüntü İşleme',
+    catML:'Makine Öğrenmesi',
     heroEyebrow:'> Merhaba! Ben',
     heroSendMsg: 'Mesaj Gönder',
     modalTitle: 'Mesaj Gönder',
@@ -811,3 +819,30 @@ window.toggleAIDrawer = function() {
   const drawer = document.getElementById('ai-chat-drawer');
   drawer.classList.toggle('open');
 };
+
+// Notes Drawer Logic
+window.toggleNotesDrawer = function(e) {
+  if (e) e.preventDefault();
+  const drawer = document.getElementById('notes-drawer');
+  if (drawer) {
+    drawer.classList.toggle('open');
+  }
+};
+
+window.closeNotesDrawer = function() {
+  const drawer = document.getElementById('notes-drawer');
+  if (drawer) {
+    drawer.classList.remove('open');
+  }
+};
+
+// Click outside to close drawer
+document.addEventListener('click', function(e) {
+  const notesDrawer = document.getElementById('notes-drawer');
+  // Check if click was outside notes drawer and not on the toggle button
+  if (notesDrawer && notesDrawer.classList.contains('open')) {
+    if (!notesDrawer.contains(e.target) && !e.target.closest('[data-lk="navNotes"]')) {
+      notesDrawer.classList.remove('open');
+    }
+  }
+});
