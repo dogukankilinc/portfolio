@@ -37,6 +37,23 @@
 
   <style>
     .nav-links a.active-nav { color: var(--accent); }
+    /* Force new theme directly in HTML to bypass cache */
+    :root {
+      --bg-primary: #0C0C0C !important;
+    }
+    #bgCanvas {
+      display: none !important;
+    }
+    .hero-name {
+      background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+  </style>
+
+  <style>
+    .nav-links a.active-nav { color: var(--accent); }
     .nav-links a.active-nav::after { width: 100%; }
     /* Section titles terminal cursor blink */
     @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
