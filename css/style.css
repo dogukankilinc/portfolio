@@ -112,7 +112,6 @@ button { font-family: var(--font-main); }
 
 /* ==================== CANVAS ==================== */
 #bgCanvas {
-  display: none;
   position: fixed;
   inset: 0;
   width: 100%;
