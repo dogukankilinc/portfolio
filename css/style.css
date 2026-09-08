@@ -67,7 +67,7 @@
 
 /* ==================== ROOT TOKENS ==================== */
 :root {
-  --bg-primary:       #080808;
+  --bg-primary:       #0C0C0C;
   --bg-secondary:     #0f0f0f;
   --bg-card:          #111111;
   --bg-card-hover:    #181818;
@@ -112,6 +112,7 @@ button { font-family: var(--font-main); }
 
 /* ==================== CANVAS ==================== */
 #bgCanvas {
+  display: none;
   position: fixed;
   inset: 0;
   width: 100%;
@@ -411,7 +412,10 @@ section { position: relative; z-index: 1; }
 .hero-name {
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 800; line-height: 1.1;
-  color: var(--text-primary); letter-spacing: -1px;
+  letter-spacing: -1px;
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-tagline-wrap {
   font-family: var(--font-mono); font-size: clamp(0.78rem, 1.8vw, 0.92rem);
