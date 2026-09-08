@@ -67,27 +67,34 @@
 
 /* ==================== ROOT TOKENS ==================== */
 :root {
-  --bg-primary:       #0C0C0C;
-  --bg-secondary:     #0f0f0f;
-  --bg-card:          #111111;
-  --bg-card-hover:    #181818;
-  --accent:           #00ff88; /* Corporate Blue */
+  --bg-primary:       #080808;
+  --bg-secondary:     #111111;
+  --bg-card:          #161616;
+  --bg-card-hover:    #1c1c1c;
+  --accent:           #00ff88;
   --accent-dim:       #004422;
   --accent-glow:      rgba(0, 255, 136, 0.08);
   --accent-glow-md:   rgba(0, 255, 136, 0.15);
   --accent-glow-lg:   rgba(0, 255, 136, 0.25);
-  --text-primary:     #f0f0f0;
-  --text-secondary:   #aaaaaa;
-  --text-muted:       #555555;
-  --border:           #1a1a1a;
-  --border-accent:    rgba(0, 255, 136, 0.15);
-  --radius:           8px;
-  --radius-sm:        4px;
-  --transition:       0.3s ease;
+  --text-primary:     #f4f4f4;
+  --text-secondary:   #bbbbbb;
+  --text-muted:       #666666;
+  --border:           #222222;
+  --border-accent:    rgba(0, 255, 136, 0.2);
+  --radius:           12px;
+  --radius-sm:        6px;
+  --transition:       0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --font-main:        'Inter', 'Roboto', sans-serif;
   --font-mono:        'JetBrains Mono', monospace;
-  --section-pad:      90px;
+  --section-pad:      100px;
 }
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
 
 /* ==================== RESET ==================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1524,4 +1531,40 @@ a, button, .lang-btn, .cert-filter-btn, summary, .hamburger {
   .notes-drawer {
     width: 100vw;
   }
+}
+/* ==================== UX IMPROVEMENTS (Appended) ==================== */
+/* Navbar blur */
+#navbar.scrolled {
+  background: rgba(8, 8, 8, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.1) !important;
+}
+
+/* Card hover states globally */
+.edu-card, .project-card, .pub-card, .hex-skill-card, .cert-card, .timeline-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.edu-card:hover, .project-card:hover, .pub-card:hover, .hex-skill-card:hover, .cert-card:hover, .timeline-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0, 255, 136, 0.05) !important;
+  border-color: rgba(0, 255, 136, 0.3) !important;
+  background: var(--bg-card-hover) !important;
+}
+
+/* Buttons */
+.btn-primary, .btn-contact {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+}
+.btn-primary:hover, .btn-contact:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3) !important;
+}
+
+/* Nav links hover glow */
+.nav-links a {
+  transition: color 0.3s, text-shadow 0.3s !important;
+}
+.nav-links a:hover, .nav-links a.active-nav {
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.5) !important;
 }
