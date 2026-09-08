@@ -809,148 +809,40 @@ window.openModal = function(id) {
   document.getElementById(id).classList.add('active');
 };
 window.closeModal = function(e, id) {
-  if(e.target.id === id) document.getElementById(id).classList.remove('active');
+  if(e.target.id === id) {
+    document.getElementById(id).classList.remove('active');
+  }
 };
 
-// AI Drawer
+// Custom AI Drawer Toggle
 window.toggleAIDrawer = function() {
-  document.getElementById('ai-chat-drawer').classList.toggle('open');
+  const drawer = document.getElementById('ai-chat-drawer');
+  drawer.classList.toggle('open');
 };
 
-// Notes Drawer
+// Notes Drawer Logic
 window.toggleNotesDrawer = function(e) {
   if (e) e.preventDefault();
-  const d = document.getElementById('notes-drawer');
-  if (d) d.classList.toggle('open');
+  const drawer = document.getElementById('notes-drawer');
+  if (drawer) {
+    drawer.classList.toggle('open');
+  }
 };
+
 window.closeNotesDrawer = function() {
-  const d = document.getElementById('notes-drawer');
-  if (d) d.classList.remove('open');
+  const drawer = document.getElementById('notes-drawer');
+  if (drawer) {
+    drawer.classList.remove('open');
+  }
 };
+
+// Click outside to close drawer
 document.addEventListener('click', function(e) {
-  const d = document.getElementById('notes-drawer');
-  if (d && d.classList.contains('open') && !d.contains(e.target) && !e.target.closest('[data-lk="navNotes"]')) {
-    d.classList.remove('open');
+  const notesDrawer = document.getElementById('notes-drawer');
+  // Check if click was outside notes drawer and not on the toggle button
+  if (notesDrawer && notesDrawer.classList.contains('open')) {
+    if (!notesDrawer.contains(e.target) && !e.target.closest('[data-lk="navNotes"]')) {
+      notesDrawer.classList.remove('open');
+    }
   }
 });
-
-// ===================== V3 DESIGN SYSTEMS =====================
-
-// Scroll-to-top (v3 uses .visible)
-(function() {
-  const btn = document.getElementById('scrollTop');
-  if (!btn) return;
-  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400), { passive: true });
-  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-})();
-
-// Fade-in IntersectionObserver
-(function() {
-  const els = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
-  if (!els.length) return;
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight * 0.95) el.classList.add('visible');
-    else obs.observe(el);
-  });
-})();
-
-// Marquee Section
-(function() {
-  const row1 = document.getElementById('marqueeRow1');
-  const row2 = document.getElementById('marqueeRow2');
-  const sec  = document.getElementById('marquee-section');
-  if (!row1 || !row2 || !sec) return;
-  const imgs = [
-    'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
-    'https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif',
-    'https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif',
-    'https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif',
-    'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
-    'https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif',
-    'https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif',
-    'https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif',
-    'https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif',
-    'https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif',
-    'https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif',
-    'https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif',
-    'https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif',
-    'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
-    'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
-    'https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif',
-    'https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif',
-    'https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif',
-    'https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif',
-    'https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif',
-    'https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif'
-  ];
-  function buildRow(el, arr) {
-    [...arr, ...arr, ...arr].forEach(src => {
-      const div = document.createElement('div'); div.className = 'marquee-item';
-      const img = document.createElement('img'); img.src = src; img.loading = 'lazy'; img.alt = '';
-      div.appendChild(img); el.appendChild(div);
-    });
-  }
-  buildRow(row1, imgs.slice(0, 11));
-  buildRow(row2, imgs.slice(11));
-  let ticking = false;
-  function upd() {
-    const rect = sec.getBoundingClientRect();
-    const off = (window.scrollY - (window.scrollY + rect.top - window.innerHeight)) * 0.3;
-    row1.style.willChange = 'transform';
-    row2.style.willChange = 'transform';
-    row1.style.transform = `translateX(${off - 200}px)`;
-    row2.style.transform = `translateX(${-(off - 200)}px)`;
-    ticking = false;
-  }
-  window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(upd); ticking = true; } }, { passive: true });
-  upd();
-})();
-
-// About text character animation
-(function() {
-  const el = document.getElementById('aboutAnimText');
-  if (!el) return;
-  const text = el.textContent;
-  el.innerHTML = '';
-  [...text].forEach(ch => {
-    const s = document.createElement('span'); s.className = 'char';
-    s.textContent = ch === ' ' ? '\u00A0' : ch; el.appendChild(s);
-  });
-  const chars = el.querySelectorAll('.char');
-  const total = chars.length;
-  function upd() {
-    const rect = el.getBoundingClientRect();
-    const prog = Math.max(0, Math.min(1, (window.innerHeight * 0.8 - rect.top) / (window.innerHeight * 0.6)));
-    const lit = Math.floor(prog * total);
-    chars.forEach((c, i) => c.classList.toggle('lit', i < lit));
-  }
-  window.addEventListener('scroll', upd, { passive: true });
-  upd();
-})();
-
-// Magnetic hero portrait
-(function() {
-  const wrap = document.getElementById('heroPortrait');
-  if (!wrap) return;
-  let active = false;
-  document.addEventListener('mousemove', e => {
-    const rect = wrap.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2;
-    const dx = e.clientX - cx, dy = e.clientY - cy;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-    const thr = Math.max(rect.width, rect.height) / 2 + 150;
-    if (dist < thr) {
-      active = true;
-      wrap.style.transition = 'transform 0.3s ease-out';
-      wrap.style.transform = `translateX(calc(-50% + ${dx / 3}px)) translateY(${dy / 3}px)`;
-    } else if (active) {
-      active = false;
-      wrap.style.transition = 'transform 0.6s ease-in-out';
-      wrap.style.transform = 'translateX(-50%)';
-    }
-  });
-})();
-

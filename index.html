@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Doğukan M. KILINÇ — AI & ML Engineer specializing in Computer Vision, Deep Learning and Edge AI.">
+  <meta name="description" content="Doğukan M. KILINÇ — AI & ML Engineer specializing in Computer Vision, Deep Learning and Edge AI. Portfolio, projects, certifications and contact.">
   <meta property="og:title" content="Doğukan M. KILINÇ | AI & ML Engineer">
   <meta property="og:description" content="AI & ML Engineer at FİGES · Computer Vision · Deep Learning · Edge AI · MATLAB & Simulink">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/180156605?v=4">
@@ -11,32 +11,62 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Doğukan M. KILINÇ | AI &amp; ML Engineer</title>
 
-  <!-- Google tag -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QP13HHLJX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6QP13HHLJX');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6QP13HHLJX');
+  </script>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%230C0C0C'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='bold' text-anchor='middle' fill='%23BBCCD7'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23080808'/><text x='50' y='68' font-family='monospace' font-size='52' font-weight='bold' text-anchor='middle' fill='%2300ff88'>D</text></svg>">
 
-  <!-- Google Fonts: Kanit -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.0">
+  <link rel="stylesheet" href="css/style.css?v=2.9.2">
+
+  <style>
+    .nav-links a.active-nav { color: var(--accent); }
+    /* Force new theme directly in HTML to bypass cache */
+    :root {
+      --bg-primary: #0C0C0C !important;
+    }
+    #bgCanvas {
+      display: none !important;
+    }
+    .hero-name {
+      background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+  </style>
+
+  <style>
+    .nav-links a.active-nav { color: var(--accent); }
+    .nav-links a.active-nav::after { width: 100%; }
+    /* Section titles terminal cursor blink */
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+  </style>
 </head>
 <body>
-
+<!-- ===================== BACKGROUND ===================== -->
 <canvas id="bgCanvas"></canvas>
 
 <!-- ===================== NAVBAR ===================== -->
 <nav id="navbar">
   <div class="nav-container">
-    <a href="#home" class="nav-logo"><img src="assets/img/logo.png" alt="DMK Logo"></a>
+    <a href="#home" class="nav-logo"><img src="assets/img/logo.png" alt="DMK Logo" style="height: 32px;"></a>
     <ul class="nav-links">
       <li><a href="#about"          data-lk="navAbout">About</a></li>
       <li><a href="#experience"     data-lk="navExperience">Experience</a></li>
@@ -49,6 +79,7 @@
       <li><a href="#contact"        data-lk="navContact">Contact</a></li>
     </ul>
     <div class="nav-right">
+
       <div class="lang-toggle" aria-label="Select language">
         <span id="langEN" class="lang-btn lang-active">EN</span>
         <span class="lang-sep">|</span>
@@ -61,16 +92,17 @@
   </div>
 </nav>
 
-<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+<!-- Mobile Nav Overlay -->
 <div class="mobile-menu" id="mobileMenu">
   <ul>
-    <li><a href="#about"        data-lk="navAbout" onclick="toggleMenu()">About</a></li>
-    <li><a href="#experience"   data-lk="navExperience" onclick="toggleMenu()">Experience</a></li>
-    <li><a href="#projects"     data-lk="navProjects" onclick="toggleMenu()">Projects</a></li>
-    <li><a href="#publications" data-lk="navPubs" onclick="toggleMenu()">Publications</a></li>
+    <li><a href="#about"        data-lk="navAbout">About</a></li>
+    <li><a href="#skills"       data-lk="navSkills">Skills</a></li>
+    <li><a href="#experience"   data-lk="navExperience">Experience</a></li>
+    <li><a href="#projects"     data-lk="navProjects">Projects</a></li>
+    <li><a href="#publications" data-lk="navPubs">Publications</a></li>
     <li><a href="#"             onclick="toggleMenu(); toggleNotesDrawer(event)" data-lk="navNotes">Notes</a></li>
-    <li><a href="#certifications" data-lk="navCerts" onclick="toggleMenu()">Certifications</a></li>
-    <li><a href="#contact"      data-lk="navContact" onclick="toggleMenu()">Contact</a></li>
+    <li><a href="#certifications" data-lk="navCerts">Certifications</a></li>
+    <li><a href="#contact"      data-lk="navContact">Contact</a></li>
   </ul>
   <div class="mobile-lang">
     <div class="lang-toggle" style="width:100%;justify-content:center;">
@@ -81,411 +113,968 @@
   </div>
 </div>
 
+
 <!-- ===================== HERO ===================== -->
 <section id="home">
-  <div class="hero-name-wrap fade-in-up" style="transition-delay:.15s">
-    <h1 class="hero-name">Doğukan M. KILINÇ</h1>
-  </div>
-  <div class="hero-bottom-bar">
-    <p class="hero-tagline fade-in-up" style="transition-delay:.35s">
-      <span data-lk="heroTagline">an AI &amp; ML engineer crafting intelligent systems that see, learn, and decide</span>
-    </p>
-    <div class="fade-in-up" style="transition-delay:.5s">
-      <a href="#contact" class="btn-contact" data-lk="heroBtnContact">Contact Me</a>
-    </div>
-  </div>
-  <div class="hero-portrait-wrap fade-in-up" style="transition-delay:.6s" id="heroPortrait">
-    <img
-      src="https://avatars.githubusercontent.com/u/180156605?v=4"
-      alt="Doğukan M. KILINÇ"
-      loading="eager"
-      style="border-radius:50%;border:2px solid rgba(215,226,234,0.15)"
-    >
-  </div>
-</section>
+  <div class="hero-grid">
 
-<!-- ===================== MARQUEE ===================== -->
-<section id="marquee-section">
-  <div class="marquee-row" id="marqueeRow1"></div>
-  <div class="marquee-row" id="marqueeRow2"></div>
+    <!-- Profile Photo -->
+    <div class="hero-photo-wrap scroll-reveal">
+      <div class="hero-photo-inner">
+        <div class="hero-ring"></div>
+        <div class="hero-ring-2"></div>
+        <img
+          src="https://avatars.githubusercontent.com/u/180156605?v=4"
+          alt="Doğukan M. KILINÇ"
+          loading="eager"
+        >
+        <!-- Glassmorphism hover overlay -->
+        <div class="photo-overlay">
+          <div class="photo-overlay-inner">
+            <div class="photo-overlay-name">Doğukan M. KILINÇ</div>
+            <div class="photo-overlay-title">AI &amp; ML Engineer</div>
+            <div class="photo-overlay-org">R&amp;D @ FİGES A.Ş.</div>
+            <div class="photo-overlay-tags">
+              <span>Computer Vision</span>
+              <span>Deep Learning</span>
+              <span>Edge AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content scroll-reveal">
+      <!-- Live Status Badge -->
+      <a class="live-status" onclick="openModal('contactModal')" style="cursor:pointer; user-select:none;" title="Send Message">
+        <span class="live-dot"></span>
+        <span data-lk="liveStatus">Open to Collaboration</span>
+      </a>
+
+      <p class="hero-eyebrow"><span id="heroEyebrowTyped"></span><span class="cursor blink-cursor">_</span></p>
+
+      <h1 class="hero-name" id="heroNameTyped"></h1>
+
+      <div class="hero-tagline-wrap">
+        <span id="tagline"></span><span class="cursor">|</span>
+      </div>
+
+      <p class="hero-sub" data-lk="heroSub">
+        AI & ML Engineer at FİGES A.Ş. · MSc in Electrical &amp; Electronics Engineering · Computer Vision · Deep Learning · Edge AI
+      </p>
+
+      <div class="hero-pills">
+        <span class="hero-pill"><i class="fa-solid fa-image"></i> <span data-lk="heroPill1">Image Processing</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-eye"></i> <span data-lk="heroPill2">Computer Vision</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-brain"></i> <span data-lk="heroPill3">Machine Learning</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-network-wired"></i> <span data-lk="heroPill4">Deep Learning</span></span>
+        <span class="hero-pill"><i class="fa-solid fa-microchip"></i> <span data-lk="heroPill5">Edge AI</span></span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-code"></i>
+          <span data-lk="heroBtnProjects">View Projects</span>
+        </a>
+        <a href="assets/cv/DMK-CV.pdf" download class="btn btn-outline" id="cvDownloadBtn">
+          <i class="fa-solid fa-download"></i>
+          <span data-lk="heroBtnCV">Download CV</span>
+        </a>
+        <a href="assets/cv/dmk-cv-academia.pdf" download class="btn btn-ghost">
+          <i class="fa-solid fa-scroll"></i>
+          <span data-lk="heroBtnAcademic">Academic CV</span>
+        </a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/dgkilinc/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/dogukankilinc" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:dmkilinc@outlook.com" class="social-icon" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+
+      <!-- Skill Category Marquee Strip -->
+      <div class="skill-marquee-wrap">
+        <div class="skill-marquee-track">
+          <!-- Duplicated for seamless loop -->
+          <span class="skill-cat-badge"><i class="fa-solid fa-square-root-variable"></i> MATLAB &amp; Simulink</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-brain"></i> Artificial Intelligence</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-sitemap"></i> Model-Based Design</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+          <span class="skill-cat-badge"><i class="fa-brands fa-python"></i> Python &amp; Data Analysis</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-microchip"></i> Edge AI &amp; Hardware</span>
+          <!-- Duplicate for seamless -->
+          <span class="skill-cat-badge"><i class="fa-solid fa-square-root-variable"></i> MATLAB &amp; Simulink</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-brain"></i> Artificial Intelligence</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-sitemap"></i> Model-Based Design</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+          <span class="skill-cat-badge"><i class="fa-brands fa-python"></i> Python &amp; Data Analysis</span>
+          <span class="skill-cat-badge"><i class="fa-solid fa-microchip"></i> Edge AI &amp; Hardware</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- ===================== ABOUT ===================== -->
-<section id="about">
-  <div class="about-deco about-deco-tl fade-in-left" style="transition-delay:.1s">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png" alt="" loading="lazy">
-  </div>
-  <div class="about-deco about-deco-bl fade-in-left" style="transition-delay:.25s">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png" alt="" loading="lazy">
-  </div>
-  <div class="about-deco about-deco-tr fade-in-right" style="transition-delay:.15s">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png" alt="" loading="lazy">
-  </div>
-  <div class="about-deco about-deco-br fade-in-right" style="transition-delay:.3s">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png" alt="" loading="lazy">
-  </div>
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="aboutTag">GET TO KNOW ME</p>
+      <h2 class="section-title" data-lk="aboutTitle">About Me</h2>
+      <div class="section-line"></div>
+    </div>
 
-  <div class="about-inner">
-    <h2 class="section-big-title hero-heading fade-in-up" data-lk="aboutTitle">About Me</h2>
-    <div class="about-text-block">
-      <p class="about-paragraph" id="aboutAnimText" data-lk="aboutAnimText">With more than two years of experience in AI and machine learning, i focus on computer vision, deep learning, and model-based design. I enjoy building systems that perceive the world in real time — deploying solutions on NVIDIA edge hardware, MATLAB/Simulink, and embedded targets. Let's build something intelligent together!</p>
-      <a href="#contact" class="btn-contact">Contact Me</a>
-    </div>
-    <div class="about-stats">
-      <div class="about-stat">
-        <div class="about-stat-num">3+</div>
-        <div class="about-stat-label" data-lk="statYears">Years Exp.</div>
+    <div class="about-grid">
+      <div class="about-text scroll-reveal">
+        <p data-lk="aboutP1" data-lk-html="true"></p>
+        <p data-lk="aboutP2" data-lk-html="true"></p>
+        <p data-lk="aboutP3" data-lk-html="true"></p>
+        <p data-lk="aboutP4" data-lk-html="true"></p>
+        <p data-lk="aboutP5" data-lk-html="true"></p>
       </div>
-      <div class="about-stat">
-        <div class="about-stat-num">30+</div>
-        <div class="about-stat-label" data-lk="statCerts">Certs</div>
-      </div>
-      <div class="about-stat">
-        <div class="about-stat-num">2</div>
-        <div class="about-stat-label" data-lk="statProjects">Projects</div>
-      </div>
-      <div class="about-stat">
-        <div class="about-stat-num">7</div>
-        <div class="about-stat-label" data-lk="statPubs">Publications</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===================== WHAT I DO ===================== -->
-<section id="what-i-do">
-  <h2 class="section-big-title" data-lk="whatIDoTitle">What I Do</h2>
-  <div class="services-list">
-    <div class="service-item fade-in-up">
-      <div class="service-num">01</div>
-      <div class="service-content">
-        <div class="service-name" data-lk="svc1Name">AI &amp; Machine Learning</div>
-        <div class="service-desc" data-lk="svc1Desc">Designing and deploying machine learning models — from classical ML pipelines to deep neural networks — tailored for real-world engineering problems and production environments.</div>
-      </div>
-    </div>
-    <div class="service-item fade-in-up delay-1">
-      <div class="service-num">02</div>
-      <div class="service-content">
-        <div class="service-name" data-lk="svc2Name">Computer Vision</div>
-        <div class="service-desc" data-lk="svc2Desc">Building systems that see: object detection, image segmentation, tracking, and real-time visual processing for industrial, automotive, and research applications.</div>
-      </div>
-    </div>
-    <div class="service-item fade-in-up delay-2">
-      <div class="service-num">03</div>
-      <div class="service-content">
-        <div class="service-name" data-lk="svc3Name">Deep Learning</div>
-        <div class="service-desc" data-lk="svc3Desc">Developing and training advanced neural architectures — CNNs, transformers, RNNs — and optimizing them for deployment on edge hardware and cloud platforms.</div>
-      </div>
-    </div>
-    <div class="service-item fade-in-up delay-3">
-      <div class="service-num">04</div>
-      <div class="service-content">
-        <div class="service-name" data-lk="svc4Name">Model-Based Design</div>
-        <div class="service-desc" data-lk="svc4Desc">Developing AI-powered autonomous systems through MATLAB and Simulink: from algorithm design and simulation to automatic code generation for embedded targets.</div>
-      </div>
-    </div>
-    <div class="service-item fade-in-up delay-4">
-      <div class="service-num">05</div>
-      <div class="service-content">
-        <div class="service-name" data-lk="svc5Name">Edge AI &amp; Deployment</div>
-        <div class="service-desc" data-lk="svc5Desc">Deploying trained models onto embedded systems and edge devices — NVIDIA Jetson, Raspberry Pi, FPGAs — with GPU Coder optimization for real-time performance.</div>
+      <div class="about-stats scroll-reveal sr-d2">
+        <div class="stat-card">
+          <div class="stat-num" data-count="3" data-suffix="+">3+</div>
+          <div class="stat-label" data-lk="statYears">Years of Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="30" data-suffix="+">30+</div>
+          <div class="stat-label" data-lk="statCerts">Certifications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="2">2</div>
+          <div class="stat-label" data-lk="statProjects">GitHub Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="2">2</div>
+          <div class="stat-label" data-lk="statDegrees">Academic Degrees</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== EXPERIENCE ===================== -->
-<section id="experience">
-  <h2 class="section-big-title hero-heading fade-in-up" data-lk="expTitle">Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item fade-in-up">
-      <div class="timeline-dot-col">
-        <div class="timeline-dot-v"></div>
-        <div class="timeline-line"></div>
-      </div>
-      <div class="timeline-card">
-        <div class="timeline-top">
-          <div class="timeline-company">FİGES A.Ş.</div>
-          <span class="timeline-date">Sep 2023 — Present</span>
-        </div>
-        <div class="timeline-location"><i class="fa-solid fa-location-dot"></i> Bursa, Turkey</div>
-        <div class="timeline-role" style="font-size:1.1rem;margin-top:10px">Artificial Intelligence and Machine Learning Engineer</div>
-        <div class="timeline-date" style="font-size:.85rem;color:rgba(215,226,234,.5);margin-bottom:10px">Feb 2025 — Present</div>
-        <div class="timeline-desc">
-          <ul class="experience-list">
-            <li>Executed design and simulation of AI-powered autonomous systems using Model-Based Design methodologies within MATLAB and Simulink.</li>
-            <li>Delivered advanced technical training sessions to leading engineering firms and academic institutions.</li>
-            <li>Developed data-driven ML models for condition monitoring, fault detection, and RUL estimation using the Predictive Maintenance Toolbox.</li>
-            <li>Advancing R&amp;D on perception algorithms using Lidar and Image Processing Toolboxes, deploying on NVIDIA platforms via GPU Coder.</li>
-          </ul>
-        </div>
-        <div class="timeline-tags">
-          <span class="tag">MATLAB &amp; Simulink</span><span class="tag">Computer Vision</span>
-          <span class="tag">Image Processing</span><span class="tag">Deep Learning</span>
-          <span class="tag">Predictive Maintenance</span><span class="tag">LiDAR</span><span class="tag">GPU Coder</span>
-        </div>
-        <details class="previous-roles">
-          <summary class="previous-roles-summary"><span data-lk="prevRoles">Previous Roles</span> <i class="fa-solid fa-chevron-down"></i></summary>
-          <div class="previous-role-item">
-            <div class="timeline-role" style="font-size:1rem;margin-top:15px">Candidate R&amp;D Engineer</div>
-            <div class="timeline-date" style="font-size:.85rem;color:rgba(215,226,234,.5);margin-bottom:10px">Oct 2023 — Feb 2025</div>
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="expTag">CAREER JOURNEY</p>
+      <h2 class="section-title" data-lk="expTitle">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- FİGES R&D (Grouped) -->
+      <div class="timeline-item scroll-reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <!-- Main Header for Company -->
+          <div class="timeline-top">
+            <div class="timeline-company">FİGES A.Ş.</div>
+            <span class="timeline-date">Sep 2023 — Present <span class="dim-text" style="opacity:0.6;font-size:0.9em;">· 2 yrs 11 mos</span></span>
+          </div>
+          <div class="timeline-location" style="margin-bottom: 12px;"><i class="fa-solid fa-location-dot"></i> Bursa, Turkey</div>
+          
+          <!-- Current Role -->
+          <div class="timeline-role" style="font-size: 1.1rem; margin-top: 10px;">Artificial Intelligence and Machine Learning Engineer</div>
+          <div class="timeline-date" style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 10px;">Feb 2025 — Present <span class="dim-text" style="opacity:0.6;font-size:0.9em;">· 1 yr 6 mos</span></div>
+          <div class="timeline-desc" data-lk-exp="expFiges1">
             <ul class="experience-list">
-              <li>Conducted AI and ML research projects using MATLAB &amp; Simulink</li>
-              <li>Focused on visual perception and deep learning models</li>
+              <li>Executed design and simulation of AI-powered autonomous systems using Model-Based Design methodologies within the MATLAB & Simulink environment.</li>
+              <li>Delivered advanced technical training sessions to leading engineering firms and academic institutions; provided project-based consultancy to R&D teams on MATLAB/Simulink workflows.</li>
+              <li>Developed data-driven machine learning models for condition monitoring, fault detection, and Remaining Useful Life (RUL) estimation using the Predictive Maintenance Toolbox.</li>
+              <li>Currently advancing R&D efforts on perception algorithms using Lidar and Image Processing Toolboxes, with a specific focus on deploying and optimizing these models for real-time performance on NVIDIA platforms via GPU Coder.</li>
             </ul>
           </div>
-          <div class="previous-role-item" style="border-bottom:none">
-            <div class="timeline-role" style="font-size:1rem;margin-top:15px">AI and ML Engineer Intern</div>
-            <div class="timeline-date" style="font-size:.85rem;color:rgba(215,226,234,.5);margin-bottom:10px">Sep 2023 — Oct 2023</div>
-            <ul class="experience-list">
-              <li>Applied deep learning techniques for object detection and recognition</li>
-            </ul>
+          <div class="timeline-tags">
+            <span class="tag">MATLAB &amp; Simulink</span><span class="tag" data-lk="tagCV">Computer Vision</span>
+            <span class="tag" data-lk="tagIP">Image Processing</span><span class="tag" data-lk="tagDL">Deep Learning</span>
+            <span class="tag">Statistics and ML</span><span class="tag" data-lk="tagPM">Predictive Maintenance</span>
+            <span class="tag">Reinforcement Learning</span><span class="tag">LiDAR</span><span class="tag">GPU Coder</span>
           </div>
-        </details>
+
+          <!-- Accordion for Previous Roles -->
+          <details class="previous-roles">
+            <summary class="previous-roles-summary"><span data-lk="prevRoles">Previous Roles</span> <i class="fa-solid fa-chevron-down"></i></summary>
+            
+            <div class="previous-role-item">
+              <div class="timeline-role" style="font-size: 1rem; margin-top: 15px;">Candidate R&amp;D Engineer</div>
+              <div class="timeline-date" style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 10px;">Oct 2023 — Feb 2025 <span class="dim-text" style="opacity:0.6;font-size:0.9em;">· 1 yr 4 mos</span></div>
+              <div class="timeline-desc" data-lk-exp="expFiges2">
+                <ul class="experience-list">
+                  <li>Conducted AI and ML research projects using MATLAB & Simulink</li>
+                  <li>Focused on visual perception and deep learning models</li>
+                </ul>
+              </div>
+              <div class="timeline-tags">
+                <span class="tag">MATLAB &amp; Simulink</span><span class="tag" data-lk="tagCV">Computer Vision</span>
+                <span class="tag" data-lk="tagIP">Image Processing</span><span class="tag" data-lk="tagDL">Deep Learning</span>
+                <span class="tag">Statistics and ML</span>
+              </div>
+            </div>
+
+            <div class="previous-role-item" style="border-bottom: none; margin-bottom:0; padding-bottom:0;">
+              <div class="timeline-role" style="font-size: 1rem; margin-top: 15px;">AI and ML Engineer Intern</div>
+              <div class="timeline-date" style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 10px;">Sep 2023 — Oct 2023 <span class="dim-text" style="opacity:0.6;font-size:0.9em;">· 1 mo</span></div>
+              <div class="timeline-desc" data-lk-exp="expFiges3">
+                <ul class="experience-list">
+                  <li>Conducted AI and ML research projects using MATLAB</li>
+                  <li>Worked on small-scale computer vision tasks</li>
+                  <li>Applied deep learning techniques for object detection and recognition</li>
+                </ul>
+              </div>
+              <div class="timeline-tags">
+                <span class="tag">MATLAB</span><span class="tag" data-lk="tagCV">Computer Vision</span>
+                <span class="tag" data-lk="tagIP">Image Processing</span><span class="tag" data-lk="tagDL">Deep Learning</span>
+              </div>
+            </div>
+            
+          </details>
+        </div>
       </div>
-    </div>
-    <div class="timeline-item fade-in-up delay-1">
-      <div class="timeline-dot-col"><div class="timeline-dot-v"></div><div class="timeline-line"></div></div>
-      <div class="timeline-card">
-        <div class="timeline-top"><div class="timeline-company">ArVis Technology</div><span class="timeline-date">Aug 2023 — Sep 2023</span></div>
-        <div class="timeline-role">Deeptech / AI R&amp;D Specialist — Intern</div>
-        <div class="timeline-location"><i class="fa-solid fa-location-dot"></i> İstanbul, Turkey (Remote)</div>
-        <p class="timeline-desc">Participated in a deep-tech and AI-focused training program featuring leading industry professionals and respected academics.</p>
-        <div class="timeline-tags"><span class="tag">Deep Learning</span><span class="tag">AI Research</span><span class="tag">R&amp;D</span></div>
+
+      <!-- ArVis Technology -->
+      <div class="timeline-item scroll-reveal sr-d3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-company">ArVis Technology</div>
+            <span class="timeline-date">Aug 2023 — Sep 2023</span>
+          </div>
+          <div class="timeline-role">Deeptech / AI R&amp;D Specialist — Intern</div>
+          <div class="timeline-location"><i class="fa-solid fa-location-dot"></i> İstanbul, Turkey (Remote)</div>
+          <p class="timeline-desc" data-lk-exp="exp4Desc">Participated in a deep-tech and AI-focused training program featuring leading industry professionals and respected academics. Gained a broader perspective on AI's transformative role across sectors and developed a deeper understanding of the challenges and opportunities in the field.</p>
+          <div class="timeline-tags">
+            <span class="tag" data-lk="tagDL">Deep Learning</span><span class="tag" data-lk="tagAIR">AI Research</span><span class="tag" data-lk="tagRD">R&amp;D</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="timeline-item fade-in-up delay-2">
-      <div class="timeline-dot-col"><div class="timeline-dot-v"></div><div class="timeline-line"></div></div>
-      <div class="timeline-card">
-        <div class="timeline-top"><div class="timeline-company">AES Group</div><span class="timeline-date">Jul 2023 — Aug 2023</span></div>
-        <div class="timeline-role">Automation Engineer Intern</div>
-        <div class="timeline-location"><i class="fa-solid fa-location-dot"></i> Bursa, Turkey</div>
-        <p class="timeline-desc">Directly involved in the development of a wood processing machine — assembling components, wiring control panels, testing and commissioning the final product.</p>
-        <div class="timeline-tags"><span class="tag">Automation</span><span class="tag">Electrical Engineering</span><span class="tag">Control Systems</span></div>
+
+      <!-- AES Group -->
+      <div class="timeline-item scroll-reveal sr-d4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-company">AES Group</div>
+            <span class="timeline-date">Jul 2023 — Aug 2023</span>
+          </div>
+          <div class="timeline-role">Automation Engineer Intern</div>
+          <div class="timeline-location"><i class="fa-solid fa-location-dot"></i> Bursa, Turkey</div>
+          <p class="timeline-desc" data-lk-exp="exp5Desc">Directly involved in the development of a wood processing machine — assembling electrical and electronic components, wiring control panels, testing and commissioning the final product. Collaborated with the software development team and observed real-world hardware-software integration.</p>
+          <div class="timeline-tags">
+            <span class="tag" data-lk="tagAuto">Automation</span><span class="tag" data-lk="tagEE">Electrical Engineering</span>
+            <span class="tag" data-lk="tagCS">Control Systems</span><span class="tag" data-lk="tagHI">Hardware Integration</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="timeline-item fade-in-up delay-3">
-      <div class="timeline-dot-col"><div class="timeline-dot-v"></div></div>
-      <div class="timeline-card">
-        <div class="timeline-top"><div class="timeline-company">Wolt</div><span class="timeline-date">Mar 2021 — Sep 2021</span></div>
-        <div class="timeline-role">Courier</div>
-        <div class="timeline-location"><i class="fa-solid fa-location-dot"></i> Copenhagen, Denmark</div>
-        <p class="timeline-desc">Relocated to Denmark during COVID-19, operated as a sole proprietorship. Developed strong adaptability and valuable international experience.</p>
-        <div class="timeline-tags"><span class="tag">Self-Employment</span><span class="tag">Denmark</span><span class="tag">International Experience</span></div>
+
+      <!-- Wolt -->
+      <div class="timeline-item scroll-reveal sr-d5">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-top">
+            <div class="timeline-company">Wolt</div>
+            <span class="timeline-date">Mar 2021 — Sep 2021</span>
+          </div>
+          <div class="timeline-role">Courier</div>
+          <div class="timeline-location"><i class="fa-solid fa-location-dot"></i> Copenhagen, Denmark</div>
+          <p class="timeline-desc" data-lk-exp="exp6Desc">Relocated to Denmark in September 2020 as universities were closed due to COVID-19. Operated as a sole proprietorship and fulfilled regular tax obligations — developing strong adaptability, self-management, and valuable international work experience.</p>
+          <div class="timeline-tags">
+            <span class="tag" data-lk="tagSE">Self-Employment</span><span class="tag" data-lk="tagDen">Denmark</span><span class="tag" data-lk="tagIE">International Experience</span>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ===================== EDUCATION ===================== -->
-<section id="education">
-  <h2 class="section-big-title hero-heading fade-in-up" data-lk="eduTitle">Education</h2>
-  <div class="education-grid">
-    <div class="edu-card fade-in-up">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-degree" data-lk="edu1Deg">Master of Science</div>
-      <div class="edu-school" data-lk="edu1Sch">Bursa Teknik Üniversitesi</div>
-      <div class="edu-field" data-lk="edu1Fld">Electrical and Electronics Engineering</div>
-      <div class="edu-date"><i class="fa-regular fa-calendar"></i> August 2024</div>
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="eduTag">ACADEMIC BACKGROUND</p>
+      <h2 class="section-title" data-lk="eduTitle">Education</h2>
+      <div class="section-line"></div>
     </div>
-    <div class="edu-card fade-in-up delay-1">
-      <div class="edu-icon">📊</div>
-      <div class="edu-degree" data-lk="edu2Deg">AI &amp; Data Analysis Program</div>
-      <div class="edu-school" data-lk="edu2Sch">Marmara University</div>
-      <div class="edu-field" data-lk="edu2Fld">Artificial Intelligence | Data Analysis School</div>
-      <div class="edu-date"><i class="fa-regular fa-calendar"></i> Oct 2025 — May 2026</div>
-    </div>
-    <div class="edu-card fade-in-up delay-2">
-      <div class="edu-icon">⚡</div>
-      <div class="edu-degree" data-lk="edu3Deg">Bachelor of Science</div>
-      <div class="edu-school" data-lk="edu3Sch">Pamukkale Üniversitesi</div>
-      <div class="edu-field" data-lk="edu3Fld">Electrical and Electronics Engineering</div>
-      <div class="edu-date"><i class="fa-regular fa-calendar"></i> Sep 2018 — Dec 2023</div>
-    </div>
-    <div class="edu-card fade-in-up delay-3">
-      <div class="edu-icon">🏫</div>
-      <div class="edu-degree" data-lk="edu4Deg">High School — Science</div>
-      <div class="edu-school" data-lk="edu4Sch">Gürsu Borsa İstanbul Anadolu Lisesi</div>
-      <div class="edu-field" data-lk="edu4Fld">Science Track</div>
-      <div class="edu-date"><i class="fa-regular fa-calendar"></i> Sep 2014 — Jun 2018</div>
+
+    <div class="education-grid">
+
+      <div class="edu-card scroll-reveal">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-degree" data-lk="edu1Deg">Master of Science</div>
+        <div class="edu-school" data-lk="edu1Sch">Bursa Teknik Üniversitesi</div>
+        <div class="edu-field" data-lk="edu1Fld">Electrical and Electronics Engineering</div>
+        <div class="edu-date"><i class="fa-regular fa-calendar"></i> <span data-lk="edu1Date">August 2024</span></div>
+      </div>
+
+      <div class="edu-card scroll-reveal sr-d1">
+        <div class="edu-icon">📊</div>
+        <div class="edu-degree" data-lk="edu2Deg">AI &amp; Data Analysis Program</div>
+        <div class="edu-school" data-lk="edu2Sch">Marmara University</div>
+        <div class="edu-field" data-lk="edu2Fld">Institute of Population and Social Research · Artificial Intelligence | Data Analysis School</div>
+        <div class="edu-date"><i class="fa-regular fa-calendar"></i> <span data-lk="edu2Date">Oct 2025 — May 2026</span></div>
+      </div>
+
+      <div class="edu-card scroll-reveal sr-d2">
+        <div class="edu-icon">⚡</div>
+        <div class="edu-degree" data-lk="edu3Deg">Bachelor of Science</div>
+        <div class="edu-school" data-lk="edu3Sch">Pamukkale Üniversitesi</div>
+        <div class="edu-field" data-lk="edu3Fld">Electrical and Electronics Engineering</div>
+        <div class="edu-date"><i class="fa-regular fa-calendar"></i> <span data-lk="edu3Date">Sep 2018 — Dec 2023</span></div>
+      </div>
+
+      <div class="edu-card scroll-reveal sr-d3">
+        <div class="edu-icon">🏫</div>
+        <div class="edu-degree" data-lk="edu4Deg">High School — Science</div>
+        <div class="edu-school" data-lk="edu4Sch">Gürsu Borsa İstanbul Anadolu Lisesi</div>
+        <div class="edu-field" data-lk="edu4Fld">Science Track</div>
+        <div class="edu-date"><i class="fa-regular fa-calendar"></i> <span data-lk="edu4Date">Sep 2014 — Jun 2018</span></div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ===================== PROJECTS ===================== -->
-<section id="projects">
-  <h2 class="section-big-title hero-heading fade-in-up" data-lk="projTitle">Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card fade-in-up">
-      <div class="project-icon-box"><i class="fa-solid fa-camera"></i></div>
-      <h3 class="project-title" data-lk="proj1Title">YOLOv9 · CUDA · Simulink · IP Cam · Orin</h3>
-      <div style="font-size:.72rem;color:#BBCCD7;margin-bottom:8px;opacity:.6"><i class="fa-regular fa-calendar"></i> Jan 2026 – May 2026</div>
-      <p class="project-desc" data-lk="proj1Desc">Real-time YOLOv9 object detection on NVIDIA Jetson AGX Orin using IP camera streams, powered by CUDA code generated directly from Simulink.</p>
-      <div class="project-tags">
-        <span class="tag">YOLOv9</span><span class="tag">CUDA</span><span class="tag">Simulink</span>
-        <span class="tag">NVIDIA Jetson AGX Orin</span><span class="tag">GPU Coder</span>
-      </div>
-      <div class="project-footer">
-        <a href="https://github.com/dogukankilinc/yolov9-cuda-simulink-ipcam-orin" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-          <i class="fa-brands fa-github"></i> <span data-lk="projBtn">View on GitHub</span>
-        </a>
-      </div>
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="projTag">WHAT I'VE BUILT</p>
+      <h2 class="section-title" data-lk="projTitle">Projects</h2>
+      <div class="section-line"></div>
     </div>
-    <div class="project-card fade-in-up delay-2">
-      <div class="project-icon-box"><i class="fa-solid fa-microchip"></i></div>
-      <h3 class="project-title" data-lk="proj2Title">TinyDL · Moisture Detection · RPi Pico</h3>
-      <div style="font-size:.72rem;color:#BBCCD7;margin-bottom:8px;opacity:.6"><i class="fa-regular fa-calendar"></i> May 2026 – Jul 2026</div>
-      <p class="project-desc" data-lk="proj2Desc">Real-time moisture classification using a 1D CNN deployed on Raspberry Pi Pico via Simulink. Inference results displayed on a 7-segment LED display.</p>
-      <div class="project-tags">
-        <span class="tag">TinyML</span><span class="tag">1D CNN</span><span class="tag">Raspberry Pi Pico</span>
-        <span class="tag">Simulink</span><span class="tag">Edge AI</span>
+
+    <div class="projects-grid">
+
+      <div class="project-card scroll-reveal">
+        <div class="project-icon-box"><i class="fa-solid fa-camera"></i></div>
+        <h3 class="project-title" data-lk="proj1Title">YOLOv9 · CUDA · Simulink · IP Cam · Orin</h3>
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;"><i class="fa-regular fa-calendar"></i> <span data-lk="proj1Date">Jan 2026 – May 2026</span></div>
+        <p class="project-desc" data-lk="proj1Desc">Real-time YOLOv9 object detection on NVIDIA Jetson AGX Orin using IP camera streams, powered by CUDA code generated directly from Simulink.</p>
+        <div class="project-tags">
+          <span class="tag">YOLOv9</span>
+          <span class="tag">CUDA</span>
+          <span class="tag">Simulink</span>
+          <span class="tag">NVIDIA Jetson AGX Orin</span>
+          <span class="tag" data-lk="tagCV">Computer Vision</span>
+          <span class="tag">GPU Coder</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/dogukankilinc/yolov9-cuda-simulink-ipcam-orin" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            <i class="fa-brands fa-github"></i>
+            <span data-lk="projBtn">View on GitHub</span>
+          </a>
+        </div>
       </div>
-      <div class="project-footer">
-        <a href="https://github.com/dogukankilinc/TinyDL-Moisture-Detection-RPi-Pico" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-          <i class="fa-brands fa-github"></i> <span data-lk="projBtn">View on GitHub</span>
-        </a>
+
+      <div class="project-card scroll-reveal sr-d2">
+        <div class="project-icon-box"><i class="fa-solid fa-microchip"></i></div>
+        <h3 class="project-title" data-lk="proj2Title">TinyDL · Moisture Detection · RPi Pico</h3>
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;"><i class="fa-regular fa-calendar"></i> <span data-lk="proj2Date">May 2026 – Jul 2026</span></div>
+        <p class="project-desc" data-lk="proj2Desc">Real-time moisture classification (Dry/Wet) using a 1D CNN deployed on Raspberry Pi Pico via Simulink. Inference results displayed on a 7-segment LED display.</p>
+        <div class="project-tags">
+          <span class="tag">TinyML</span>
+          <span class="tag">1D CNN</span>
+          <span class="tag">Raspberry Pi Pico</span>
+          <span class="tag">Simulink</span>
+          <span class="tag">Edge AI</span>
+          <span class="tag">Embedded Systems</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/dogukankilinc/TinyDL-Moisture-Detection-RPi-Pico" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            <i class="fa-brands fa-github"></i>
+            <span data-lk="projBtn">View on GitHub</span>
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ===================== PUBLICATIONS ===================== -->
-<section id="publications">
-  <h2 class="section-big-title hero-heading fade-in-up" data-lk="pubTitle">Publications</h2>
-  <div class="pub-grid">
-    <div class="pub-card fade-in-up"><div class="pub-header"><i class="fa-solid fa-file-lines pub-icon"></i><span class="pub-year" data-lk="pub7Date">May 2026</span></div><h3 class="pub-title" data-lk="pub7Title">A NEW HYBRID GAIN-SCHEDULED ADAPTIVE NEURO FUZZY INFERENCE CONTROLLER FOR FUEL CELL STABILITY</h3><div class="pub-authors" data-lk="pub7Authors">IHTEC-2026</div><div class="pub-abstract-box"><div class="llm-cursor" id="llmCursor7"></div><p class="pub-abstract llm-stream" data-stream-id="pub7Desc"></p></div></div>
-    <div class="pub-card fade-in-up delay-1"><div class="pub-header"><i class="fa-solid fa-file-lines pub-icon"></i><span class="pub-year" data-lk="pub1Date">Apr 2026</span></div><h3 class="pub-title" data-lk="pub1Title">Design and Performance Analysis of a Type-2 FLC Controller...</h3><div class="pub-authors" data-lk="pub1Authors">Scilight Press</div><div class="pub-abstract-box"><div class="llm-cursor" id="llmCursor1"></div><p class="pub-abstract llm-stream" data-stream-id="pub1Desc"></p></div></div>
-    <div class="pub-card fade-in-up delay-2"><div class="pub-header"><i class="fa-solid fa-file-lines pub-icon"></i><span class="pub-year" data-lk="pub2Date">Dec 2025</span></div><h3 class="pub-title" data-lk="pub2Title">CWT-CNN-BASED INTELLIGENT HYBRID PQD CLASSIFIER</h3><div class="pub-authors" data-lk="pub2Authors">WESC-2025</div><div class="pub-abstract-box"><div class="llm-cursor" id="llmCursor2"></div><p class="pub-abstract llm-stream" data-stream-id="pub2Desc"></p></div></div>
-    <div class="pub-card fade-in-up delay-3"><div class="pub-header"><i class="fa-solid fa-file-lines pub-icon"></i><span class="pub-year" data-lk="pub3Date">Dec 2025</span></div><h3 class="pub-title" data-lk="pub3Title">MODELING ENERGY MANAGEMENT SYSTEM...</h3><div class="pub-authors" data-lk="pub3Authors">WESC-2025</div><div class="pub-abstract-box"><div class="llm-cursor" id="llmCursor3"></div><p class="pub-abstract llm-stream" data-stream-id="pub3Desc"></p></div></div>
-    <div class="pub-card fade-in-up delay-4"><div class="pub-header"><i class="fa-solid fa-newspaper pub-icon"></i><span class="pub-year" data-lk="pub4Date">Oct 2025</span></div><h3 class="pub-title" data-lk="pub4Title">MATLAB ile Büyük Dil Modelleri: GPT-4, Llama 3 ve Mixtral</h3><div class="pub-authors" data-lk="pub4Authors">FİGES Blog</div><div class="pub-abstract-box"><div class="llm-cursor" id="llmCursor4"></div><p class="pub-abstract llm-stream" data-stream-id="pub4Desc"></p></div></div>
-    <div class="pub-card fade-in-up delay-5"><div class="pub-header"><i class="fa-solid fa-newspaper pub-icon"></i><span class="pub-year" data-lk="pub5Date">Sep 2025</span></div><h3 class="pub-title" data-lk="pub5Title">Converting Deep Learning Models between PyTorch, TensorFlow, and MATLAB</h3><div class="pub-authors" data-lk="pub5Authors">FİGES Blog</div><div class="pub-abstract-box"><div class="llm-cursor" id="llmCursor5"></div><p class="pub-abstract llm-stream" data-stream-id="pub5Desc"></p></div></div>
+<section id="publications" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="pubTag">RESEARCH & PAPERS</p>
+      <h2 class="section-title" data-lk="pubTitle">Publications</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="pub-grid">
+      <!-- Publication 7 -->
+      <div class="pub-card scroll-reveal sr-d7">
+        <div class="pub-header">
+          <i class="fa-solid fa-file-lines pub-icon"></i>
+          <span class="pub-year" data-lk="pub7Date">May 2026</span>
+        </div>
+        <h3 class="pub-title" data-lk="pub7Title">A NEW HYBRID GAIN-SCHEDULED ADAPTIVE NEURO FUZZY INFERENCE CONTROLLER DESIGN FOR IMPROVING THE OUTPUT STABILITY OF A FUEL CELL STACK</h3>
+        <div class="pub-authors" data-lk="pub7Authors">International Hydrogen Technologies Congress (IHTEC-2026)</div>
+        <div class="pub-abstract-box">
+          <div class="llm-cursor" id="llmCursor7"></div>
+          <p class="pub-abstract llm-stream" data-stream-id="pub7Desc"></p>
+        </div>
+      </div>
+      
+      <!-- Publication 1 -->
+      <div class="pub-card scroll-reveal sr-d1">
+        <div class="pub-header">
+          <i class="fa-solid fa-file-lines pub-icon"></i>
+          <span class="pub-year" data-lk="pub1Date">Apr 2026</span>
+        </div>
+        <h3 class="pub-title" data-lk="pub1Title">Design and Performance Analysis of a Type-2 FLC Controller...</h3>
+        <div class="pub-authors" data-lk="pub1Authors">Scilight Press</div>
+        <div class="pub-abstract-box">
+          <div class="llm-cursor" id="llmCursor1"></div>
+          <p class="pub-abstract llm-stream" data-stream-id="pub1Desc"></p>
+        </div>
+      </div>
+      
+      <!-- Publication 2 -->
+      <div class="pub-card scroll-reveal sr-d2">
+        <div class="pub-header">
+          <i class="fa-solid fa-file-lines pub-icon"></i>
+          <span class="pub-year" data-lk="pub2Date">Dec 2025</span>
+        </div>
+        <h3 class="pub-title" data-lk="pub2Title">CWT-CNN-BASED INTELLIGENT HYBRID PQD...</h3>
+        <div class="pub-authors" data-lk="pub2Authors">World Energy Storage Conference (WESC-2025)</div>
+        <div class="pub-abstract-box">
+          <div class="llm-cursor" id="llmCursor2"></div>
+          <p class="pub-abstract llm-stream" data-stream-id="pub2Desc"></p>
+        </div>
+      </div>
+      
+      <!-- Publication 3 -->
+      <div class="pub-card scroll-reveal sr-d3">
+        <div class="pub-header">
+          <i class="fa-solid fa-file-lines pub-icon"></i>
+          <span class="pub-year" data-lk="pub3Date">Dec 2025</span>
+        </div>
+        <h3 class="pub-title" data-lk="pub3Title">MODELING ENERGY MANAGEMENT SYSTEM...</h3>
+        <div class="pub-authors" data-lk="pub3Authors">World Energy Storage Conference (WESC-2025)</div>
+        <div class="pub-abstract-box">
+          <div class="llm-cursor" id="llmCursor3"></div>
+          <p class="pub-abstract llm-stream" data-stream-id="pub3Desc"></p>
+        </div>
+      </div>
+      
+      <!-- Publication 4 -->
+      <div class="pub-card scroll-reveal sr-d4">
+        <div class="pub-header">
+          <i class="fa-solid fa-newspaper pub-icon"></i>
+          <span class="pub-year" data-lk="pub4Date">Oct 2025</span>
+        </div>
+        <h3 class="pub-title" data-lk="pub4Title">MATLAB ile Büyük Dil Modelleri: GPT-4, Llama 3 ve Mixtral</h3>
+        <div class="pub-authors" data-lk="pub4Authors">FİGES Blog</div>
+        <div class="pub-abstract-box">
+          <div class="llm-cursor" id="llmCursor4"></div>
+          <p class="pub-abstract llm-stream" data-stream-id="pub4Desc"></p>
+        </div>
+      </div>
+      
+      <!-- Publication 5 -->
+      <div class="pub-card scroll-reveal sr-d5">
+        <div class="pub-header">
+          <i class="fa-solid fa-newspaper pub-icon"></i>
+          <span class="pub-year" data-lk="pub5Date">Sep 2025</span>
+        </div>
+        <h3 class="pub-title" data-lk="pub5Title">Converting Deep Learning Models between PyTorch, TensorFlow, and MATLAB</h3>
+        <div class="pub-authors" data-lk="pub5Authors">FİGES Blog</div>
+        <div class="pub-abstract-box">
+          <div class="llm-cursor" id="llmCursor5"></div>
+          <p class="pub-abstract llm-stream" data-stream-id="pub5Desc"></p>
+        </div>
+      </div>
+      
+      <!-- Publication 6 -->
+      <div class="pub-card scroll-reveal sr-d6">
+        <div class="pub-header">
+          <i class="fa-solid fa-newspaper pub-icon"></i>
+          <span class="pub-year" data-lk="pub6Date">Feb 2025</span>
+        </div>
+        <h3 class="pub-title" data-lk="pub6Title">MATLAB ve Python Birlikte Nasıl Kullanılır?</h3>
+        <div class="pub-authors" data-lk="pub6Authors">FİGES Blog</div>
+        <div class="pub-abstract-box">
+          <div class="llm-cursor" id="llmCursor6"></div>
+          <p class="pub-abstract llm-stream" data-stream-id="pub6Desc"></p>
+        </div>
+      </div>
+      
+    </div>
   </div>
 </section>
 
 <!-- ===================== SKILLS ===================== -->
-<section id="skills">
-  <h2 class="section-big-title hero-heading fade-in-up" data-lk="skillsTitle">Skills</h2>
-  <div class="hex-skills-grid">
-    <div class="hex-skill-card fade-in-up"><div class="hex-bg"></div><div class="hex-content"><div class="hex-emoji">🔬</div><div class="hex-name">MATLAB &amp; Simulink</div><div class="hex-level-bar"><div class="hex-level-fill" style="width:90%"></div></div><div class="hex-tags"><span>MATLAB</span><span>Simulink</span><span>GPU Coder</span><span>Predictive Maintenance</span></div></div></div>
-    <div class="hex-skill-card fade-in-up delay-1"><div class="hex-bg"></div><div class="hex-content"><div class="hex-emoji">🧠</div><div class="hex-name" data-lk="skillAI">Artificial Intelligence</div><div class="hex-level-bar"><div class="hex-level-fill" style="width:85%"></div></div><div class="hex-tags"><span>Machine Learning</span><span>Deep Learning</span><span>Neural Networks</span><span>TinyML</span></div></div></div>
-    <div class="hex-skill-card fade-in-up delay-2"><div class="hex-bg"></div><div class="hex-content"><div class="hex-emoji">🏗️</div><div class="hex-name" data-lk="skillMBD">Model-Based Design</div><div class="hex-level-bar"><div class="hex-level-fill" style="width:88%"></div></div><div class="hex-tags"><span>Simulink</span><span>Stateflow</span><span>Code Generation</span><span>System Composer</span></div></div></div>
-    <div class="hex-skill-card fade-in-up delay-3"><div class="hex-bg"></div><div class="hex-content"><div class="hex-emoji">👁️</div><div class="hex-name" data-lk="skillCV">Computer Vision</div><div class="hex-level-bar"><div class="hex-level-fill" style="width:82%"></div></div><div class="hex-tags"><span>Object Detection</span><span>Image Segmentation</span><span>Image Processing</span><span>LiDAR</span></div></div></div>
-    <div class="hex-skill-card fade-in-up delay-4"><div class="hex-bg"></div><div class="hex-content"><div class="hex-emoji">🐍</div><div class="hex-name" data-lk="skillPython">Python &amp; Data Analysis</div><div class="hex-level-bar"><div class="hex-level-fill" style="width:70%"></div></div><div class="hex-tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span></div></div></div>
-    <div class="hex-skill-card fade-in-up delay-5"><div class="hex-bg"></div><div class="hex-content"><div class="hex-emoji">⚡</div><div class="hex-name" data-lk="skillEdge">Edge AI &amp; Hardware</div><div class="hex-level-bar"><div class="hex-level-fill" style="width:75%"></div></div><div class="hex-tags"><span>Embedded Systems</span><span>Real-Time</span><span>CUDA</span><span>Hardware Deployment</span></div></div></div>
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="skillsTag">EXPERTISE</p>
+      <h2 class="section-title" data-lk="skillsTitle">Skills &amp; Technologies</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="hex-skills-grid">
+
+      <!-- MATLAB & Simulink -->
+      <div class="hex-skill-card scroll-reveal" style="--skill-level:90; --skill-color:#00ff88">
+        <div class="hex-bg"></div>
+        <div class="hex-content">
+          <div class="hex-icon">&#xf5fc;</div><!-- fa-square-root-variable -->
+          <div class="hex-emoji">🔬</div>
+          <div class="hex-name">MATLAB &amp; Simulink</div>
+          <div class="hex-level-bar"><div class="hex-level-fill" style="width:90%"></div></div>
+          
+          <div class="hex-tags">
+            <span>MATLAB</span><span>Simulink</span><span>GPU Coder</span>
+            <span>Predictive Maintenance</span><span data-lk="tagSP">Signal Processing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artificial Intelligence -->
+      <div class="hex-skill-card scroll-reveal sr-d1" style="--skill-level:85; --skill-color:#00ff88">
+        <div class="hex-bg"></div>
+        <div class="hex-content">
+          <div class="hex-emoji">🧠</div>
+          <div class="hex-name" data-lk="skillAI">Artificial Intelligence</div>
+          <div class="hex-level-bar"><div class="hex-level-fill" style="width:85%"></div></div>
+          
+          <div class="hex-tags">
+            <span data-lk="tagML2">Machine Learning</span><span data-lk="tagDL2">Deep Learning</span>
+            <span data-lk="tagNN">Neural Networks</span><span>TinyML</span><span>NLP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Model-Based Design -->
+      <div class="hex-skill-card scroll-reveal sr-d2" style="--skill-level:88; --skill-color:#00ff88">
+        <div class="hex-bg"></div>
+        <div class="hex-content">
+          <div class="hex-emoji">🏗️</div>
+          <div class="hex-name" data-lk="skillMBD">Model-Based Design</div>
+          <div class="hex-level-bar"><div class="hex-level-fill" style="width:88%"></div></div>
+          
+          <div class="hex-tags">
+            <span>Simulink</span><span>Stateflow</span>
+            <span data-lk="tagCG">Code Generation</span><span>System Composer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Computer Vision -->
+      <div class="hex-skill-card scroll-reveal sr-d3" style="--skill-level:82; --skill-color:#00ff88">
+        <div class="hex-bg"></div>
+        <div class="hex-content">
+          <div class="hex-emoji">👁️</div>
+          <div class="hex-name" data-lk="skillCV">Computer Vision</div>
+          <div class="hex-level-bar"><div class="hex-level-fill" style="width:82%"></div></div>
+          
+          <div class="hex-tags">
+            <span data-lk="tagOD">Object Detection</span><span data-lk="tagIS">Image Segmentation</span>
+            <span data-lk="tagIP2">Image Processing</span><span data-lk="tagOT">Object Tracking</span><span>LiDAR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python & Data Analysis -->
+      <div class="hex-skill-card scroll-reveal sr-d4" style="--skill-level:70; --skill-color:#00ff88">
+        <div class="hex-bg"></div>
+        <div class="hex-content">
+          <div class="hex-emoji">🐍</div>
+          <div class="hex-name" data-lk="skillPython">Python &amp; Data Analysis</div>
+          <div class="hex-level-bar"><div class="hex-level-fill" style="width:70%"></div></div>
+          
+          <div class="hex-tags">
+            <span>Python</span><span>Pandas</span><span>NumPy</span>
+            <span>Scikit-learn</span><span data-lk="tagDV">Data Visualization</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edge AI & Hardware -->
+      <div class="hex-skill-card scroll-reveal sr-d5" style="--skill-level:75; --skill-color:#00ff88">
+        <div class="hex-bg"></div>
+        <div class="hex-content">
+          <div class="hex-emoji">⚡</div>
+          <div class="hex-name" data-lk="skillEdge">Edge AI &amp; Hardware</div>
+          <div class="hex-level-bar"><div class="hex-level-fill" style="width:75%"></div></div>
+          
+          <div class="hex-tags">
+            <span data-lk="tagES">Embedded Systems</span><span data-lk="tagRTS">Real-Time Systems</span>
+            <span>CUDA</span><span data-lk="tagHD">Hardware Deployment</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
-
+
 <!-- ===================== CERTIFICATIONS ===================== -->
-<section id="certifications">
-  <h2 class="section-big-title hero-heading fade-in-up" data-lk="certsTitle">Certs</h2>
-  <div class="cert-filter-row fade-in-up delay-1">
-    <button class="cert-filter-btn active" data-filter="all"       data-lk="certAll">All</button>
-    <button class="cert-filter-btn"        data-filter="nvidia"    data-lk="certNvidia">NVIDIA</button>
-    <button class="cert-filter-btn"        data-filter="mathworks" data-lk="certMath">MathWorks</button>
-    <button class="cert-filter-btn"        data-filter="aiml"      data-lk="certAiml">AI / ML</button>
-    <button class="cert-filter-btn"        data-filter="other"     data-lk="certOther">Other</button>
-  </div>
-  <div class="certs-grid">
-    <div class="cert-card fade-in-up" data-provider="nvidia"><span class="cert-badge badge-nvidia"><i class="fa-solid fa-microchip"></i> NVIDIA</span><div class="cert-name">Fundamentals of Accelerated Computing with Modern CUDA C++</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Sep 2025</span><span class="cert-issuer">NVIDIA</span></div></div>
-    <div class="cert-card fade-in-up delay-1" data-provider="nvidia"><span class="cert-badge badge-nvidia"><i class="fa-solid fa-microchip"></i> NVIDIA</span><div class="cert-name">Getting Started with Accelerated Computing in CUDA C/C++</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Aug 2025</span><span class="cert-issuer">NVIDIA</span></div></div>
-    <div class="cert-card fade-in-up delay-2" data-provider="nvidia"><span class="cert-badge badge-nvidia"><i class="fa-solid fa-microchip"></i> NVIDIA</span><div class="cert-name">Getting Started with Deep Learning</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Jul 2025</span><span class="cert-issuer">NVIDIA</span></div></div>
-    <div class="cert-card fade-in-up" data-provider="mathworks"><span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span><div class="cert-name">Feature Extraction Techniques for Signals</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Oct 2025</span><span class="cert-issuer">MathWorks</span></div></div>
-    <div class="cert-card fade-in-up delay-1" data-provider="mathworks"><span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span><div class="cert-name">Low Code Image Segmentation</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Oct 2024</span><span class="cert-issuer">MathWorks</span></div></div>
-    <div class="cert-card fade-in-up delay-2" data-provider="mathworks"><span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span><div class="cert-name">Advanced Deep Learning Techniques for Computer Vision</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 2024</span><span class="cert-issuer">MathWorks</span></div></div>
-    <div class="cert-card fade-in-up delay-3" data-provider="mathworks"><span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span><div class="cert-name">Computer Vision for Engineering and Science Specialization</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2023</span><span class="cert-issuer">MathWorks</span></div></div>
-    <div class="cert-card fade-in-up delay-4" data-provider="mathworks"><span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span><div class="cert-name">Machine Learning with MATLAB</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Nov 2023</span><span class="cert-issuer">MathWorks</span></div></div>
-    <div class="cert-card fade-in-up delay-5" data-provider="mathworks"><span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span><div class="cert-name">Deep Learning with MATLAB</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Oct 2023</span><span class="cert-issuer">MathWorks</span></div></div>
-    <div class="cert-card fade-in-up" data-provider="aiml"><span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span><div class="cert-name">Yapay Zeka Yaz Kampı 2025</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Aug 2025</span><span class="cert-issuer">Miuul</span></div></div>
-    <div class="cert-card fade-in-up delay-1" data-provider="aiml"><span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span><div class="cert-name">Neural Networks and Deep Learning</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2023</span><span class="cert-issuer">DeepLearning.AI</span></div></div>
-    <div class="cert-card fade-in-up delay-2" data-provider="aiml"><span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span><div class="cert-name">Computer Vision Basics</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Jan 2024</span><span class="cert-issuer">University at Buffalo</span></div></div>
-    <div class="cert-card fade-in-up delay-3" data-provider="aiml"><span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span><div class="cert-name">Machine Learning Summer Camp</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Aug 2023</span><span class="cert-issuer">Miuul</span></div></div>
-    <div class="cert-card fade-in-up" data-provider="other"><span class="cert-badge badge-other"><i class="fa-solid fa-certificate"></i> Other</span><div class="cert-name">IHA-1 Sportif / Amatör Pilot Lisansı</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 2022</span><span class="cert-issuer">SHGM</span></div></div>
-    <div class="cert-card fade-in-up delay-1" data-provider="other"><span class="cert-badge badge-other"><i class="fa-solid fa-certificate"></i> Other</span><div class="cert-name">9. Yazılım ve Teknoloji Zirvesi</div><div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2022</span><span class="cert-issuer">IEEE</span></div></div>
+<section id="certifications" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="certsTag">CONTINUOUS LEARNING</p>
+      <h2 class="section-title" data-lk="certsTitle">Certifications</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="cert-filter-row scroll-reveal">
+      <button class="cert-filter-btn active" data-filter="all"       data-lk="certAll">All</button>
+      <button class="cert-filter-btn"        data-filter="nvidia"    data-lk="certNvidia">NVIDIA</button>
+      <button class="cert-filter-btn"        data-filter="mathworks" data-lk="certMath">MathWorks</button>
+      <button class="cert-filter-btn"        data-filter="aiml"      data-lk="certAiml">AI / ML</button>
+      <button class="cert-filter-btn"        data-filter="other"     data-lk="certOther">Other</button>
+    </div>
+
+    <div class="certs-grid">
+
+      <!-- ---- NVIDIA ---- -->
+      <div class="cert-card scroll-reveal" data-provider="nvidia">
+        <span class="cert-badge badge-nvidia"><i class="fa-solid fa-microchip"></i> NVIDIA</span>
+        <div class="cert-name">Fundamentals of Accelerated Computing with Modern CUDA C++</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Sep 2025</span><span class="cert-issuer">NVIDIA</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d1" data-provider="nvidia">
+        <span class="cert-badge badge-nvidia"><i class="fa-solid fa-microchip"></i> NVIDIA</span>
+        <div class="cert-name">Getting Started with Accelerated Computing in CUDA C/C++</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Aug 2025</span><span class="cert-issuer">NVIDIA</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d2" data-provider="nvidia">
+        <span class="cert-badge badge-nvidia"><i class="fa-solid fa-microchip"></i> NVIDIA</span>
+        <div class="cert-name">Getting Started with Deep Learning</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Jul 2025</span><span class="cert-issuer">NVIDIA</span></div>
+      </div>
+
+      <!-- ---- MathWorks ---- -->
+      <div class="cert-card scroll-reveal" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Feature Extraction Techniques for Signals</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Oct 2025</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d1" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">MATLAB EXPO 2024</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Nov 2024</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d2" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Low Code Image Segmentation</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Oct 2024</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d3" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Data Science Companion</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Oct 2024</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d4" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Exploratory Data Analysis with MATLAB</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Jul 2024</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d5" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Advanced Deep Learning Techniques for Computer Vision</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 2024</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Deep Learning for Object Detection</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Mar 2024</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d1" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Computer Vision for Engineering and Science Specialization</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2023</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d2" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Object Tracking and Motion Detection with Computer Vision</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2023</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d3" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Machine Learning for Computer Vision</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2023</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d4" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Machine Learning with MATLAB</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Nov 2023</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d5" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Introduction to Computer Vision</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Nov 2023</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Deep Learning with MATLAB</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Oct 2023</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d1" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">MATLAB ile Yapay Zeka ve Makine Öğrenimi</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Sep 2023</span><span class="cert-issuer">FİGES A.Ş.</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d2" data-provider="mathworks">
+        <span class="cert-badge badge-mathworks"><i class="fa-solid fa-square-root-variable"></i> MathWorks</span>
+        <div class="cert-name">Image Processing with MATLAB</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Nov 2022</span><span class="cert-issuer">MathWorks</span></div>
+      </div>
+
+      <!-- ---- AI / ML ---- -->
+      <div class="cert-card scroll-reveal" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">Yapay Zeka Yaz Kampı 2025</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Aug 2025</span><span class="cert-issuer">Miuul</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d1" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">Neural Networks and Deep Learning</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2023</span><span class="cert-issuer">DeepLearning.AI</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d2" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">Computer Vision Basics</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Jan 2024</span><span class="cert-issuer">University at Buffalo</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d3" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">Natural Language Processing (NLP)</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Jan 2024</span><span class="cert-issuer">Miuul</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d4" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">Machine Learning Summer Camp</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Aug 2023</span><span class="cert-issuer">Miuul</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d5" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">Machine Learning</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Aug 2023</span><span class="cert-issuer">Miuul</span></div>
+      </div>
+      <div class="cert-card scroll-reveal" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">Yapay Zeka Kampı</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 2023</span><span class="cert-issuer">Google Cloud Skills Boost</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d1" data-provider="aiml">
+        <span class="cert-badge badge-aiml"><i class="fa-solid fa-brain"></i> AI / ML</span>
+        <div class="cert-name">What is Data Science?</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 2023</span><span class="cert-issuer">IBM</span></div>
+      </div>
+
+      <!-- ---- Other ---- -->
+      <div class="cert-card scroll-reveal sr-d2" data-provider="other">
+        <span class="cert-badge badge-other"><i class="fa-solid fa-certificate"></i> Other</span>
+        <div class="cert-name">Duygusal Çeviklik ve Şiddetsiz İletişim</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> May 2024</span><span class="cert-issuer">FNM Solutions</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d3" data-provider="other">
+        <span class="cert-badge badge-other"><i class="fa-solid fa-certificate"></i> Other</span>
+        <div class="cert-name">Etkili Sunum Becerileri Eğitimi</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Mar 2024</span><span class="cert-issuer">FNM Solutions</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d4" data-provider="other">
+        <span class="cert-badge badge-other"><i class="fa-solid fa-certificate"></i> Other</span>
+        <div class="cert-name">9. Yazılım ve Teknoloji Zirvesi</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Dec 2022</span><span class="cert-issuer">IEEE</span></div>
+      </div>
+      <div class="cert-card scroll-reveal sr-d5" data-provider="other">
+        <span class="cert-badge badge-other"><i class="fa-solid fa-certificate"></i> Other</span>
+        <div class="cert-name">IHA-1 Sportif / Amatör Pilot Lisansı</div>
+        <div class="cert-meta"><span class="cert-date"><i class="fa-regular fa-calendar"></i> Apr 2022</span><span class="cert-issuer">SHGM</span></div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- ===================== CONTACT ===================== -->
-<section id="contact">
-  <h2 class="section-big-title hero-heading fade-in-up" data-lk="contactTitle">Contact</h2>
-  <div class="contact-grid">
-    <div class="contact-form-wrap fade-in-up">
-      <form id="contactForm" action="#" onsubmit="return false;">
-        <div class="form-row">
-          <div class="form-group"><label for="name" data-lk="formNameLabel">Your Name</label><input type="text" id="name" name="name" placeholder="Jane Doe" data-lk="formNamePh" required></div>
-          <div class="form-group"><label for="email" data-lk="formEmailLabel">Your Email</label><input type="email" id="email" name="email" placeholder="jane@example.com" data-lk="formEmailPh" required></div>
-        </div>
-        <div class="form-group"><label for="message" data-lk="formMsgLabel">Your Message</label><textarea id="message" name="message" placeholder="Hello Doğukan, I would like to..." data-lk="formMsgPh" required></textarea></div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fa-solid fa-paper-plane"></i> <span data-lk="formBtn">Send Message</span></button>
-        <div id="formSuccess"></div>
-      </form>
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <p class="section-tag" data-lk="contactTag">GET IN TOUCH</p>
+      <h2 class="section-title" data-lk="contactTitle">Let's Connect</h2>
+      <div class="section-line"></div>
     </div>
-    <div class="contact-info fade-in-up delay-2">
-      <h3 class="contact-info-title" data-lk="contactInfoTitle">Contact Information</h3>
-      <p class="contact-info-desc" data-lk="contactDesc">Whether you have a project idea, a collaboration opportunity, or just want to say hello — my inbox is always open.</p>
-      <div class="contact-links">
-        <a href="mailto:dmkilinc@outlook.com" class="contact-link"><div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div><div class="contact-link-body"><h4 data-lk="contactLinkEmail">Email</h4><p>dmkilinc@outlook.com</p></div><button class="copy-email-btn" data-copy-email title="Copy email"><i class="fa-regular fa-copy"></i></button></a>
-        <a href="https://www.linkedin.com/in/dgkilinc/" target="_blank" rel="noopener" class="contact-link"><div class="contact-link-icon"><i class="fa-brands fa-linkedin-in"></i></div><div class="contact-link-body"><h4 data-lk="contactLinkLI">LinkedIn</h4><p>linkedin.com/in/dgkilinc</p></div></a>
-        <a href="https://github.com/dogukankilinc" target="_blank" rel="noopener" class="contact-link"><div class="contact-link-icon"><i class="fa-brands fa-github"></i></div><div class="contact-link-body"><h4 data-lk="contactLinkGH">GitHub</h4><p>github.com/dogukankilinc</p></div></a>
+
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-wrap scroll-reveal">
+        <form id="contactForm" action="#" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-lk="formNameLabel">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Doe" data-lk="formNamePh" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-lk="formEmailLabel">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" data-lk="formEmailPh" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" data-lk="formMsgLabel">Your Message</label>
+            <textarea id="message" name="message" placeholder="Hello Doğukan, I would like to..." data-lk="formMsgPh" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-lk="formBtn">Send Message</span>
+          </button>
+          <div id="formSuccess"></div>
+        </form>
       </div>
+
+      <!-- Info -->
+      <div class="contact-info scroll-reveal sr-d2">
+        <h3 class="contact-info-title" data-lk="contactInfoTitle">Contact Information</h3>
+        <p class="contact-info-desc" data-lk="contactDesc">Whether you have a project idea, a collaboration opportunity, or just want to say hello — my inbox is always open.</p>
+        <div class="contact-links">
+          <a href="mailto:dmkilinc@outlook.com" class="contact-link">
+            <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-link-body">
+              <h4 data-lk="contactLinkEmail">Email</h4>
+              <p data-lk="contactLinkEmailSub">dmkilinc@outlook.com</p>
+            </div>
+            <button class="copy-email-btn" data-copy-email title="Copy email">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </a>
+          <a href="https://www.linkedin.com/in/dgkilinc/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="contact-link-body">
+              <h4 data-lk="contactLinkLI">LinkedIn</h4>
+              <p data-lk="contactLinkLISub">linkedin.com/in/dgkilinc</p>
+            </div>
+          </a>
+          <a href="https://github.com/dogukankilinc" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="contact-link-body">
+              <h4 data-lk="contactLinkGH">GitHub</h4>
+              <p data-lk="contactLinkGHSub">github.com/dogukankilinc</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
 <footer>
-  <div class="footer-inner">
-    <span class="footer-text" data-lk="footerMade">Designed &amp; built with</span>
-    <span class="footer-name" data-lk="footerBy">by Doğukan M. KILINÇ</span>
-    <span class="footer-text">· 2026</span>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-text" data-lk="footerMade">Designed &amp; built with</span>
+
+      <span class="footer-name" data-lk="footerBy">by Doğukan M. KILINÇ</span>
+      <span class="footer-text">· 2026</span>
+    </div>
   </div>
 </footer>
 
-<button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+<!-- Scroll-to-top button -->
+<button id="scrollTop" aria-label="Scroll to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
 
-<script src="js/main.js?v=3.0"></script>
+
+
+<script src="js/main.js?v=2.6"></script>
 
 <!-- Contact Modal -->
-<div id="contactModal" class="modal-overlay" onclick="closeModal(event,'contactModal')">
+<div id="contactModal" class="modal-overlay" onclick="closeModal(event, 'contactModal')">
   <div class="modal-content">
     <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
-    <h3 data-lk="modalTitle" style="margin-bottom:20px;color:#D7E2EA">Send a Message</h3>
+    <h3 data-lk="modalTitle" style="margin-bottom:20px;">Send a Message</h3>
     <form id="contactModalForm" action="#" onsubmit="return false;">
-      <div class="form-group"><label for="m-name">Your Name</label><input type="text" id="m-name" name="name" placeholder="Jane Doe" required></div>
-      <div class="form-group"><label for="m-email">Your Email</label><input type="email" id="m-email" name="email" placeholder="jane@example.com" required></div>
-      <div class="form-group"><label for="m-message">Your Message</label><textarea id="m-message" name="message" placeholder="Hello Doğukan..." rows="4" required></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:4px"><i class="fa-solid fa-paper-plane"></i> <span data-lk="formBtn">Send Message</span></button>
+      <div class="form-group">
+        <label for="m-name" data-lk="formNameLabel">Your Name</label>
+        <input type="text" id="m-name" name="name" placeholder="Jane Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="m-email" data-lk="formEmailLabel">Your Email</label>
+        <input type="email" id="m-email" name="email" placeholder="jane@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="m-message" data-lk="formMsgLabel">Your Message</label>
+        <textarea id="m-message" name="message" placeholder="Hello Doğukan..." rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span data-lk="formBtn">Send Message</span>
+      </button>
     </form>
   </div>
 </div>
 
 <!-- Notes Drawer -->
 <div id="notes-drawer" class="notes-drawer">
-  <div class="notes-drawer-toggle" onclick="toggleNotesDrawer()"><i class="fa-solid fa-book"></i> <span data-lk="navNotes">Notes</span></div>
-  <div class="notes-drawer-header"><h3 data-lk="notesDrawerTitle">My Personal Notes</h3><button class="notes-drawer-close" onclick="closeNotesDrawer()" aria-label="Close notes">&times;</button></div>
+  <div class="notes-drawer-toggle" onclick="toggleNotesDrawer()">
+    <i class="fa-solid fa-book"></i> <span data-lk="navNotes">Notes</span>
+  </div>
+  <div class="notes-drawer-header">
+    <h3 data-lk="notesDrawerTitle">My Personal Notes</h3>
+    <button class="notes-drawer-close" onclick="closeNotesDrawer()" aria-label="Close notes">&times;</button>
+  </div>
   <div class="notes-drawer-content">
-    <div class="notes-category"><h4 data-lk="catDL">Deep Learning</h4><div class="notes-list">
-      <a href="assets/notes/Deep Learning Onramp - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Deep Learning Onramp - MW</a>
-      <a href="assets/notes/Deep Learning with MATLAB - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Deep Learning with MATLAB - MW</a>
-      <a href="assets/notes/Derin Öğrenme - AÜ - Doç. Dr. Ferhat BOZKURT.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Derin Öğrenme - AÜ - Doç. Dr. Ferhat BOZKURT</a>
-      <a href="assets/notes/Derin Öğrenme - Teorik.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Derin Öğrenme - Teorik</a>
-      <a href="assets/notes/Hiperparametre Optimizasyonu - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Hiperparametre Optimizasyonu - MW</a>
-      <a href="assets/notes/Training Process - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Training Process - MW</a>
-    </div></div>
-    <div class="notes-category"><h4 data-lk="catIP">Image Processing</h4><div class="notes-list">
-      <a href="assets/notes/MATLAB ile Temel Görüntü İşleme.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> MATLAB ile Temel Görüntü İşleme</a>
-    </div></div>
-    <div class="notes-category"><h4 data-lk="catML">Machine Learning</h4><div class="notes-list">
-      <a href="assets/notes/Machine Learning with MATLAB.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Machine Learning with MATLAB</a>
-      <a href="assets/notes/Python Machine Learning - Miuul.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Python Machine Learning - Miuul</a>
-    </div></div>
+    
+    <div class="notes-category">
+      <h4 data-lk="catDL">Deep Learning</h4>
+      <div class="notes-list">
+        <a href="assets/notes/Deep Learning Onramp - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Deep Learning Onramp - MW</a>
+        <a href="assets/notes/Deep Learning with MATLAB - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Deep Learning with MATLAB - MW</a>
+        <a href="assets/notes/Derin Öğrenme - AÜ - Doç. Dr. Ferhat BOZKURT.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Derin Öğrenme - AÜ - Doç. Dr. Ferhat BOZKURT</a>
+        <a href="assets/notes/Derin Öğrenme - Teorik.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Derin Öğrenme - Teorik</a>
+        <a href="assets/notes/Hiperparametre Optimizasyonu - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Hiperparametre Optimizasyonu - MW</a>
+        <a href="assets/notes/Training Process - MW.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Training Process - MW</a>
+      </div>
+    </div>
+
+    <div class="notes-category">
+      <h4 data-lk="catIP">Image Processing</h4>
+      <div class="notes-list">
+        <a href="assets/notes/MATLAB ile Temel Görüntü İşleme.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> MATLAB ile Temel Görüntü İşleme</a>
+      </div>
+    </div>
+
+    <div class="notes-category">
+      <h4 data-lk="catML">Machine Learning</h4>
+      <div class="notes-list">
+        <a href="assets/notes/Machine Learning with MATLAB.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Machine Learning with MATLAB</a>
+        <a href="assets/notes/Python Machine Learning - Miuul.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Python Machine Learning - Miuul</a>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- AI Chat Drawer -->
+<!-- Custom AI Chat Drawer -->
 <div id="ai-chat-drawer" class="ai-drawer">
-  <div class="ai-drawer-toggle" id="aiDrawerToggle" onclick="toggleAIDrawer()"><i class="fa-solid fa-robot"></i> <span data-lk="askAI">Ask AI</span></div>
-  <div class="ai-drawer-content"><iframe src="https://www.chatbase.co/chatbot-iframe/Rphvk1h_sxNKtORKYYcnU" width="100%" height="100%" frameborder="0"></iframe></div>
+  <div class="ai-drawer-toggle" id="aiDrawerToggle" onclick="toggleAIDrawer()">
+    <i class="fa-solid fa-robot"></i> <span data-lk="askAI">Ask AI</span>
+  </div>
+  <div class="ai-drawer-content">
+    <iframe
+      src="https://www.chatbase.co/chatbot-iframe/Rphvk1h_sxNKtORKYYcnU"
+      width="100%"
+      height="100%"
+      frameborder="0"
+    ></iframe>
+  </div>
 </div>
-
 </body>
 </html>
